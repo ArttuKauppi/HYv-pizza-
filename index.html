@@ -93,7 +93,8 @@
 <head>
 	
 	</html>
-	
+	<!DOCTYPE html>
+	<html lang="fi">
 	
 	<head>
 		<meta charset="UTF-8" />
@@ -125,8 +126,9 @@
 	<body>
 		<p id="tervetulo_teksti">Tervetuloa </p>
 		<form id="kirjautumis_lomake">
-			<h1><input id="nimi" type="text" placeholder="Syötä nimesi" value="" />
-			<input type="submit" value="Kirjaudu sisään" id="kirjaudu_nappi" onclick="kirjaudu()" /></h1>
+			<h1><input id="nimi" type="text" placeholder="Syötä nimesi" value="" /></h1>
+				<h3><input id="nimi" type="password" placeholder="salasana" value="" /></h3>
+				<h1><input type="submit" value="Kirjaudu sisään" id="kirjaudu_nappi" onclick="kirjaudu()" /></h1>
 		</form>
 		<h2><button id="kirjaudu_ulos_nappi" style="display: none;" onclick="kirjauduUlos()">Kirjaudu ulos</button></h2>
 	</body>
