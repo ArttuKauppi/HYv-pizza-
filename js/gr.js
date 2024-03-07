@@ -6,6 +6,7 @@ if(localStorage.getItem("kirjautunut") === 'kylla') {
     document.getElementById('tervetulo_teksti').textContent += localStorage.getItem("nimi");
     document.getElementById("kirjautumis_lomake").style.display ="none";
     document.getElementById("menu_nappi").style.display ='block';
+    document.getElementById().textContent += localStorage.getItem("password");
     }
 
             
@@ -14,6 +15,7 @@ function kirjaudu() {
     
     localStorage.setItem("nimi",document.getElementById("nimi").value);
     localStorage.setItem("kirjautunut","kylla");
+    localStorage.setItem("salasana",document.getElementById("salasana").value);
 }
 
 if (kirjautunut) {
@@ -26,11 +28,19 @@ if (kirjautunut) {
 } else {
     menu_nappi.style.display = 'none';
 }
+if(localStorage) {
 
-function kirjauduUlos() {
-localStorage.removeItem('kirjautunut');
-tarkistaKirjautuminen(); 
+    kirjautumis_lomake.style.display ='block';
+} else {
+    kirjautumis_lomake.style.display ='none'; 
 }
+function kirjauduUlos() {
+    localStorage.clear();
+    tarkistaKirjautuminen(); 
+}
+
+
+
 
 document.addEventListener('DOMContentLoaded', function () {
 tarkistaKirjautuminen();
