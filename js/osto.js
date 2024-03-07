@@ -24,9 +24,14 @@ function laskeYhteishinta() {
 // Tilausprosessi
 function teeTilaus() {
     var yhteishinta = laskeYhteishinta();
+    var osoite = document.getElementById("osoite").value;
+    var talo = document.getElementById("talo").value;
+    var talonNumero = document.getElementById("talonNumero").value;
+    var ovikoodi = document.getElementById("ovikoodi").value;
+
     if (yhteishinta > 0) {
         // Tässä voit toteuttaa tilauksen lähetyksen tai muun toiminnallisuuden
-        alert("Tilaus tehty! Yhteishinta: " + yhteishinta + "€");
+        alert("Tilaus tehty! Yhteishinta: " + yhteishinta + "€. Osoite: " + osoite + ", Talo: " + talo + ", Talon numero: " + talonNumero + ", Ovikoodi: " + ovikoodi);
         // Tyhjennä ostoskori tilauksen jälkeen
         ostoskori = [];
         paivitaOstoskori(); // Päivitä ostoskorin näyttö
