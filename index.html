@@ -196,8 +196,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ostoskori</title>
-	<button onclick="tilaa()">Tilaa</button>
-
+	
     <script>
         var ostoskori = []; // Alusta tyhjä ostoskori
 
@@ -237,7 +236,27 @@
 </head>
 <body>
 
-
+	<h2>Osoitetiedot:</h2>
+	<form>
+		<div class="section-label text-left">
+		<label for="Katuosoite">Katuosoite:</label>
+		</div>
+		<input type="text" id="osoite" name="osoite"><br><br>
+		<div class="section-label text-left">
+		<label for="Postinumero">Postinumero:</label>
+	</div>
+		<input type="text" id="talo" name="talo"><br><br>
+		<div class="section-label text-left">
+		<label for="Talon numero">Talon numero:</label>
+		</div>
+		<input type="text" id="talonNumero" name="talonNumero"><br><br>
+		<div class="section-label text-left">
+		<label for="Lisätietoa">Lisätietoa:</label>
+	</div>
+		<input type="text" id="Lisätietoa" name="ovikoodi"><br><br>
+	
+	</form>
+	<button onclick="tilaa()">Valmistele tilaus</button>
 
 
 
