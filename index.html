@@ -196,6 +196,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ostoskori</title>
+	<button onclick="tilaa()">Tilaa</button>
+
     <script>
         var ostoskori = []; // Alusta tyhjä ostoskori
 
@@ -222,6 +224,14 @@
 
             // Päivitä yhteishinnan näyttö
             yhteishintaElementti.textContent = "Yhteishinta: " + yhteishinta + "€";
+        }
+
+        function tilaa() {
+            // Simuloidaan tilauksen lähettäminen
+            alert("Tilaus lähetetty!");
+            // Tyhjennetään ostoskori ja päivitetään näyttö
+            ostoskori = [];
+            paivitaOstoskori();
         }
     </script>
 </head>
@@ -302,7 +312,7 @@
     
     <div class="col-md-3">
         <div class="services-inner-box">
-            <div class="ser-icon">
+            <div class="ser-icon">	
                 <img src="uploads/menu-img-05.jpg" class="img-fluid" alt="" />
             </div>
             <h2>Napolitana</h2>
