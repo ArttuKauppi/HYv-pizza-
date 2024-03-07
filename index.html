@@ -95,8 +95,7 @@
 	<html lang="fi">
 	
 	<head>
-		<meta charset="UTF-8" />
-		<title>demo8</title>
+		
 		<script type="text/javascript" language="javascript" src="js\gr.js"></script>
 		<script type="text/javascript">
 			function tarkistaKirjautuminen() {
@@ -122,6 +121,7 @@
 	</head>
 	
 	<body>
+		
 		<p id="tervetulo_teksti">Tervetuloa </p>
 		<form id="kirjautumis_lomake">
 			<h1><input id="nimi" type="text" placeholder="Syötä nimesi" value="" />
@@ -131,6 +131,7 @@
 				<h1><input type="submit" value="Kirjaudu sisään" id="kirjaudu_nappi" onclick="kirjaudu()" /></h1>
 			</form>
 			<h2><button id="kirjaudu_ulos_nappi" style="display: none;" onclick="kirjauduUlos(localStorage.clear())">Kirjaudu ulos</button></h2>
+			
 			<h4>	
 				  				
 				  <li class="nav-item" id="menu_nappi" style="display: none;">
@@ -180,83 +181,98 @@
 	
     <div id="menu" class="section lb">
         <div class="container-fluid">
-            <div class="section-title text-center">
-                <h3>Menu</h3>
-                <p>Meidän kaikki pizzat ovat tehty vain laaddukaimista ainesosista</p>
+			<div class="section-title text-center">
+				<h3>Menu</h3>
+			</div>
+			<div class="section-title text-left">
+				
+				<h1>Ostoskori:</h1>
+			<ul id="ostoskori"></ul>
             </div><!-- end title -->
+			<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ostoskori</title>
+    <script>
+        var ostoskori = []; // Alusta tyhjä ostoskori
 
-            <div class="row">
-				<div class="col-md-3">
-                    <div class="services-inner-box">
-						<div class="ser-icon">
-							<img src="uploads/menu-img-01.jpg" class="img-fluid" alt="" />
-						</div>
-						<h2>Pizza</h2>
-						<a class="hvr-radial-in" href="#">$ 18.00</a>
-					</div>
-                </div><!-- end col -->
-                <div class="col-md-3">
-                    <div class="services-inner-box">
-						<div class="ser-icon">
-							<img src="uploads/menu-img-02.jpg" class="img-fluid" alt="" />
-						</div>
-						<h2>Pizza</h2>
-						<a class="hvr-radial-in" href="#">$ 20.00</a>
-					</div>
-                </div><!-- end col -->
-				<div class="col-md-3">
-                    <div class="services-inner-box">
-						<div class="ser-icon">
-							<img src="uploads/menu-img-03.jpg" class="img-fluid" alt="" />
-						</div>
-						<h2>Pizza</h2>
-						<a class="hvr-radial-in" href="#">$ 10.00</a>
-					</div>
-                </div><!-- end col -->
-				<div class="col-md-3">
-                    <div class="services-inner-box">
-						<div class="ser-icon">
-							<img src="uploads/menu-img-04.jpg" class="img-fluid" alt="" />
-						</div>
-						<h2>Pizza</h2>
-						<a class="hvr-radial-in" href="#">$ 21.00</a>
-					</div>
-                </div><!-- end col -->
-				<div class="col-md-3">
-                    <div class="services-inner-box">
-						<div class="ser-icon">
-							<img src="uploads/menu-img-05.jpg" class="img-fluid" alt="" />
-						</div>
-						<h2>Pizza</h2>
-						<a class="hvr-radial-in" href="#">$ 22.00</a>
-					</div>
-                </div><!-- end col -->
-				<div class="col-md-3">
-                    <div class="services-inner-box">
-						<div class="ser-icon">
-							<img src="uploads/menu-img-06.jpg" class="img-fluid" alt="" />
-						</div>
-						<h2>Pizza</h2>
-						<a class="hvr-radial-in" href="#">$ 24.00</a>
-					</div>
-                </div><!-- end col -->
-				<div class="col-md-3">
-                    <div class="services-inner-box">
-						<div class="ser-icon">
-							<img src="uploads/menu-img-07.jpg" class="img-fluid" alt="" />
-						</div>
-						<h2>Pizza</h2>
-						<a class="hvr-radial-in" href="#">$ 28.00</a>
-					</div>
-                </div><!-- end col -->
-				<div class="col-md-3">
-                    <div class="services-inner-box">
-						<div class="ser-icon">
-							<img src="uploads/menu-img-08.jpg" class="img-fluid" alt="" />
-						</div>
-						<h2>Pizza</h2>
-						<a class="hvr-radial-in" href="#">$ 30.00</a>
-					</div>
+        function lisaa_tuote(nimi, hinta) {
+            ostoskori.push({ nimi: nimi, hinta: hinta }); // Lisää tuote ostoskoriin
+            paivitaOstoskori(); // Päivitä näyttö
+        }
+
+        function paivitaOstoskori() {
+            var ostoskoriElementti = document.getElementById("ostoskori");
+            ostoskoriElementti.innerHTML = ""; // Tyhjennä ensin ostoskorin näyttö
+
+            // Lisää jokainen tuote ostoskorista näyttöön
+            for (var i = 0; i < ostoskori.length; i++) {
+                var tuote = ostoskori[i];
+                var tuoteElementti = document.createElement("li");
+                tuoteElementti.textContent = tuote.nimi + " - " + tuote.hinta + "€";
+                ostoskoriElementti.appendChild(tuoteElementti);
+            }
+        }
+    </script>
+</head>
+<body>
+
+
+<div class="row">
+    <!-- Pizza1 -->
+    <div class="col-md-3">
+        <div class="services-inner-box">
+            <div class="ser-icon">
+                <img src="uploads/menu-img-01.jpg" class="img-fluid" alt="" />
+            </div>
+            <h2>Pizza1</h2>
+            <h1><input type="button" value="18€" onclick="lisaa_tuote('Pizza1', 18)" /></h1>
+        </div>
+    </div><!-- end col -->
+    <!-- Lisää muita pizza-elementtejä samalla tavalla -->
+    <!-- Pizza2 -->
+    <div class="col-md-3">
+        <div class="services-inner-box">
+            <div class="ser-icon">
+                <img src="uploads/menu-img-02.jpg" class="img-fluid" alt="" />
+            </div>
+            <h2>Pizza2</h2>
+            <h1><input type="button" value="18€" onclick="lisaa_tuote('Pizza2', 18)" /></h1>
+        </div>
+    </div><!-- end col -->
+    <!-- Pizza3 -->
+    <div class="col-md-3">
+        <div class="services-inner-box">
+            <div class="ser-icon">
+                <img src="uploads/menu-img-03.jpg" class="img-fluid" alt="" />
+            </div>
+            <h2>Pizza3</h2>
+            <h1><input type="button" value="18€" onclick="lisaa_tuote('Pizza3', 18)" /></h1>
+        </div>
+    </div><!-- end col -->
+    <!-- Lisää muita pizza-elementtejä samalla tavalla -->
+</div><!-- end row -->
+
+<!-- Ostoskorin näyttö -->
+
+</body>
+</html>
+
+			
+		
+				</div><!-- end col -->
+				<!-- Lisää muita pizza-elementtejä samalla tavalla -->
+			
+			</div><!-- end row -->
+			
+			<!-- Ostoskorin näyttö -->
+			
+			
+			</body>
+			</html>
+			
                 </div><!-- end col -->
             </div><!-- end row -->
         </div><!-- end container -->
