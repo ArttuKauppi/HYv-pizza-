@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
+    <!-- Basic -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">   
    
@@ -182,12 +183,13 @@
         <div class="container-fluid">
 			<div class="section-title text-center">
 				<h3>Menu</h3>
+				<h2>Ostoskori </h2>
+<ul id="ostoskori"></ul>
+
+<!-- Yhteishinta -->
+<div id="yhteishinta"></div>
+
 			</div>
-			<div class="section-title text-left">
-				
-				<h1>Ostoskori:</h1>
-			<ul id="ostoskori"></ul>
-            </div><!-- end title -->
 			<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -204,19 +206,36 @@
 
         function paivitaOstoskori() {
             var ostoskoriElementti = document.getElementById("ostoskori");
+            var yhteishintaElementti = document.getElementById("yhteishinta");
+            var yhteishinta = 0;
+
             ostoskoriElementti.innerHTML = ""; // Tyhjennä ensin ostoskorin näyttö
 
-            // Lisää jokainen tuote ostoskorista näyttöön
+            // Lisää jokainen tuote ostoskorista näyttöön ja laske yhteishinta
             for (var i = 0; i < ostoskori.length; i++) {
                 var tuote = ostoskori[i];
                 var tuoteElementti = document.createElement("li");
                 tuoteElementti.textContent = tuote.nimi + " - " + tuote.hinta + "€";
                 ostoskoriElementti.appendChild(tuoteElementti);
+                yhteishinta += tuote.hinta;
             }
+
+            // Päivitä yhteishinnan näyttö
+            yhteishintaElementti.textContent = "Yhteishinta: " + yhteishinta + "€";
         }
     </script>
 </head>
 <body>
+
+
+
+
+
+<!-- Ostoskorin näyttö -->
+
+</body>
+</html>
+
 
 
 <div class="row">
@@ -229,9 +248,8 @@
             <h2>Pizza1</h2>
             <h1><input type="button" value="18€" onclick="lisaa_tuote('Pizza1', 18)" /></h1>
         </div>
-    </div><!-- end col -->
-    <!-- Lisää muita pizza-elementtejä samalla tavalla -->
-    <!-- Pizza2 -->
+    </div>
+    
     <div class="col-md-3">
         <div class="services-inner-box">
             <div class="ser-icon">
@@ -250,11 +268,63 @@
             <h2>Pizza3</h2>
             <h1><input type="button" value="18€" onclick="lisaa_tuote('Pizza3', 18)" /></h1>
         </div>
+
+		
+
+		
+    </div><!-- end col -->
+    <!-- Lisää muita pizza-elementtejä samalla tavalla -->
+
+
+
+
+
+
+
+</div><!-- end row -->
+
+
+
+
+
+
+<div class="row">
+    <!-- Pizza1 -->
+    <div class="col-md-3">
+        <div class="services-inner-box">
+            <div class="ser-icon">
+                <img src="uploads/menu-img-01.jpg" class="img-fluid" alt="" />
+            </div>
+            <h2>Pizza4</h2>
+            <h1><input type="button" value="18€" onclick="lisaa_tuote('Pizza4', 18)" /></h1>
+        </div>
+    </div>
+    
+    <div class="col-md-3">
+        <div class="services-inner-box">
+            <div class="ser-icon">
+                <img src="uploads/menu-img-02.jpg" class="img-fluid" alt="" />
+            </div>
+            <h2>Pizza5</h2>
+            <h1><input type="button" value="18€" onclick="lisaa_tuote('Pizza5', 18)" /></h1>
+        </div>
+    </div><!-- end col -->
+    <!-- Pizza3 -->
+    <div class="col-md-3">
+        <div class="services-inner-box">
+            <div class="ser-icon">
+                <img src="uploads/menu-img-03.jpg" class="img-fluid" alt="" />
+            </div>
+            <h2>Pizza6</h2>
+            <h1><input type="button" value="18€" onclick="lisaa_tuote('Pizza6', 18)" /></h1>
+        </div>
+
+		
+
+		
     </div><!-- end col -->
     <!-- Lisää muita pizza-elementtejä samalla tavalla -->
 </div><!-- end row -->
-
-<!-- Ostoskorin näyttö -->
 
 </body>
 </html>
@@ -262,7 +332,7 @@
 			
 		
 				</div><!-- end col -->
-				<!-- Lisää muita pizza-elementtejä samalla tavalla -->
+				
 			
 			</div><!-- end row -->
 			
