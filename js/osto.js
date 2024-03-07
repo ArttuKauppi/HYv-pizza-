@@ -1,22 +1,26 @@
-// Alusta tyhjä ostoskori
-var ostoskori = [];
+var ostoskori = []; // Alusta tyhjä ostoskori
 
-// Funktio lisää tuotteen ostoskoriin
 function lisaa_tuote(nimi, hinta) {
-    ostoskori.push({ nimi: nimi, hinta: hinta });
-    paivitaOstoskori();
+    ostoskori.push({ nimi: nimi, hinta: hinta }); // Lisää tuote ostoskoriin
+    paivitaOstoskori(); // Päivitä näyttö
 }
 
-// Funktio päivittää ostoskorin näytön
 function paivitaOstoskori() {
     var ostoskoriElementti = document.getElementById("ostoskori");
-    ostoskoriElementti.innerHTML = ""; // Tyhjennä ostoskorin näyttö
+    var yhteishintaElementti = document.getElementById("yhteishinta");
+    var yhteishinta = 0;
 
-    // Lisää jokainen tuote ostoskorista näyttöön
+    ostoskoriElementti.innerHTML = ""; // Tyhjennä ensin ostoskorin näyttö
+
+    // Lisää jokainen tuote ostoskorista näyttöön ja laske yhteishinta
     for (var i = 0; i < ostoskori.length; i++) {
         var tuote = ostoskori[i];
         var tuoteElementti = document.createElement("li");
         tuoteElementti.textContent = tuote.nimi + " - " + tuote.hinta + "€";
         ostoskoriElementti.appendChild(tuoteElementti);
+        yhteishinta += tuote.hinta;
     }
+
+    // Päivitä yhteishinnan näyttö
+    yhteishintaElementti.textContent = "Yhteishinta: " + yhteishinta + "€";
 }
