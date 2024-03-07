@@ -127,10 +127,10 @@
 			<h1><input id="nimi" type="text" placeholder="Syötä nimesi" value="" />
 				
 			</h1>
-				<h3><input id="nimi" type="password" placeholder="salasana" value="" /></h3>
+				<h3><input id="salasana" type="password" placeholder="salasana" value="" /></h3>
 				<h1><input type="submit" value="Kirjaudu sisään" id="kirjaudu_nappi" onclick="kirjaudu()" /></h1>
 			</form>
-			<h2><button id="kirjaudu_ulos_nappi" style="display: none;" onclick="kirjauduUlos()">Kirjaudu ulos</button></h2>
+			<h2><button id="kirjaudu_ulos_nappi" style="display: none;" onclick="kirjauduUlos(localStorage.clear())">Kirjaudu ulos</button></h2>
 			<h4>	
 				  				
 				  <li class="nav-item" id="menu_nappi" style="display: none;">
