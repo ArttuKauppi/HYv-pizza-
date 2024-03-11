@@ -122,15 +122,15 @@
     
         <p id="tervetulo_teksti">Tervetuloa </p>
         <form id="kirjautumis_lomake">
-            <h1><input id="nimi" type="text" placeholder="Syötä nimesi" value="" required/>
+            <h1><input id="nimi" type="text" placeholder="Syötä nimesi" value="" />
                 
             </h1>
-                <h3><input id="salasana" type="password" placeholder="salasana" value="" required/></h3>
+                <h3><input id="salasana" type="password" placeholder="salasana" value="" /></h3>
                 <h3><input type="submit" value="Kirjaudu sisään" id="kirjaudu_nappi" onclick="kirjaudu()" /></h3>
                 
             </form>
             <h2><button id="kirjaudu_ulos_nappi" style="display: none;" onclick="kirjauduUlos(localStorage.clear())">Kirjaudu ulos</button></h2>
-            <h3><button   id="rekisteroitymislomake_nappi"  onclick="naytaRekisteroitymislomake()">Luo tili</button></h3>
+            <h3><button id="rekisteroitymislomake_nappi" onclick="naytaRekisteroitymislomake()">Luo tili</button></h3>
 
             <h4>	
                                   
@@ -166,6 +166,7 @@
         function naytaRekisteroitymislomake() {
           document.getElementById('registrationForm').style.display = 'block';
           document.getElementById('kirjautumis_lomake').style.display = 'none'; // Lisätty kirjautumislomakkeen piilottaminen
+          document.getElementById('rekisteroitymislomake_nappi').style.display = 'none'; // Lisätty rekisteröitymislomakkeen napin piilottaminen
         }
         
         document.getElementById('registrationForm').addEventListener('submit', function(event) {
@@ -187,6 +188,7 @@
       </script>
     </body>
 </html>
+
 
 </html>
 
