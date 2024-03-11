@@ -99,6 +99,28 @@
 <title>Luo tili</title>
 </head>
 <body>
+    <script type="text/javascript" language="javascript" src="js\gr.js"></script>
+    <script type="text/javascript">
+        function tarkistaKirjautuminen() {
+            var kirjautunut = localStorage.getItem('kirjautunut');
+            var kirjauduUlosNappi = document.getElementById('kirjaudu_ulos_nappi');
+
+            if (kirjautunut) {
+                kirjauduUlosNappi.style.display = 'block';
+            } else {
+                kirjauduUlosNappi.style.display = 'none';
+            }
+        }
+
+        function kirjauduUlos() {
+            localStorage.removeItem('kirjautunut');
+            tarkistaKirjautuminen(); 
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            tarkistaKirjautuminen();
+        });
+    </script>
   
     <p id="tervetulo_teksti">Tervetuloa </p>
     <form id="kirjautumis_lomake">
@@ -110,7 +132,7 @@
             
         </form>
         <h2><button id="kirjaudu_ulos_nappi" style="display: none;" onclick="kirjauduUlos(localStorage.clear())">Kirjaudu ulos</button></h2>
-        <h3><button id="rekisteroitymislomake_nappi" onclick="naytaRekisteroitymislomake()">Rekisteröidy</button></h3>
+        <h3><button  id="rekisteroitymislomake_nappi" onclick="naytaRekisteroitymislomake()">luo tili</button></h3>
 
         <h4>	
                               
@@ -131,7 +153,7 @@
       <label for="password">Salasana:</label><br>
       <input type="password" id="password" name="password" required><br>
       
-      <button type="submit" id="registerButton">Luo tili</button>
+      <button type="submit" id="registerButton">Rekisteröidy</button>
     </h3>
   </form>
   
