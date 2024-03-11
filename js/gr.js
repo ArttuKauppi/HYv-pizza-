@@ -4,6 +4,7 @@ function onkoKirjaunut(){
 if(localStorage.getItem("kirjautunut") === 'kylla') {
 
     document.getElementById('tervetulo_teksti').textContent += localStorage.getItem("nimi");
+    document.getElementById("rekisteroitymislomake_nappi").style.display ="none";
     document.getElementById("kirjautumis_lomake").style.display ="none";
     document.getElementById("menu_nappi").style.display ='block';
     document.getElementById().textContent += localStorage.getItem("password");
@@ -33,6 +34,11 @@ if(localStorage) {
     kirjautumis_lomake.style.display ='block';
 } else {
     kirjautumis_lomake.style.display ='none'; 
+}
+if (kirjautunut) {
+    rekisteroitymislomake_nappi.style.display = 'block';
+} else {
+    rekisteroitymislomake_nappi.style.display = 'none';
 }
 function kirjauduUlos() {
     localStorage.clear();
