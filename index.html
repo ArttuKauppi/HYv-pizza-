@@ -156,7 +156,7 @@
                                       </form>
                                       
                                       <div id="registrationDetails" style="display:none;">
-                                        <h2>Tervetuloa</h2>
+                                        <h2></h2>
                                         <p id="usernameDisplay"></p>
                                         <p id="emailDisplay"></p>
                                         <p id="passwordDisplay"></p>
@@ -183,9 +183,7 @@
                                           
                                           // Näytetään rekisteröintitiedot
                                           document.getElementById('usernameDisplay').innerText = 'Tervetuloa: ' + username;
-                                          document.getElementById('emailDisplay').innerText = 'Sähköposti: ' + email;
-                                          document.getElementById('passwordDisplay').innerText = 'Salasana: ' + password;
-                                          
+                                       
                                           // Näytetään rekisteröintitiedot-div
                                           document.getElementById('registrationDetails').style.display = 'block';
                                         });
@@ -441,103 +439,94 @@
 	<div id="gallery" class="section wb">
 		<div class="container-fluid">
 			<div class="section-title text-center">
-                <h3>Gallery</h3>
-                <p>Quisque eget nisl id nulla sagittis auctor quis id. Aliquam quis vehicula enim, non aliquam risus.</p>
+                <h3>Palautetta</h3>
+                <p>-</p>
             </div><!-- end title -->
 			
-			<div class="gallery-menu text-center row">
-				<div class="col-md-12">
-					<div class="button-group filter-button-group">
-						<button class="hvr-radial-in active" data-filter="*">All</button>
-						<button class="hvr-radial-in" data-filter=".gal_a">Starters</button>
-						<button class="hvr-radial-in" data-filter=".gal_b">Shops</button>
-						<button class="hvr-radial-in" data-filter=".gal_c">Main Course </button>
-						<button class="hvr-radial-in" data-filter=".gal_d">Desserts</button>
-					</div>
-				</div>
-			</div>
-			
-			<div class="gallery-list row">
-				<div class="col-md-4 col-sm-6 gallery-grid gal_a gal_b">
-					<div class="gallery-single fix">
-						<img src="uploads/gallery_img-01.jpg" class="img-fluid" alt="Image">
-						<div class="img-overlay">
-							<h3>Vegetable Food</h3>
-							<a href="uploads/gallery_img-01.jpg" data-rel="prettyPhoto[gal]" class="hoverbutton global-radius"><i class="fa fa-picture-o"></i></a>
-						</div>
-					</div>
-				</div>
-				
-				<div class="col-md-4 col-sm-6 gallery-grid gal_a gal_b">
-					<div class="gallery-single fix">
-						<img src="uploads/gallery_img-02.jpg" class="img-fluid" alt="Image">
-						<div class="img-overlay">
-							<h3>Vegetable Food</h3>
-							<a href="uploads/gallery_img-02.jpg" data-rel="prettyPhoto[gal]" class="hoverbutton global-radius"><i class="fa fa-picture-o"></i></a>
-						</div>
-					</div>
-				</div>
-				
-				<div class="col-md-4 col-sm-6 gallery-grid gal_b gal_c">
-					<div class="gallery-single fix">
-						<img src="uploads/gallery_img-03.jpg" class="img-fluid" alt="Image">
-						<div class="img-overlay">
-							<h3>Vegetable Food</h3>
-							<a href="uploads/gallery_img-03.jpg" data-rel="prettyPhoto[gal]" class="hoverbutton global-radius"><i class="fa fa-picture-o"></i></a>
-						</div>
-					</div>
-				</div>
-				
-				<div class="col-md-4 col-sm-6 gallery-grid gal_b gal_a">
-					<div class="gallery-single fix">
-						<img src="uploads/gallery_img-04.jpg" class="img-fluid" alt="Image">
-						<div class="img-overlay">
-							<h3>Vegetable Food</h3>
-							<a href="uploads/gallery_img-04.jpg" data-rel="prettyPhoto[gal]" class="hoverbutton global-radius"><i class="fa fa-picture-o"></i></a>
-						</div>
-					</div>
-				</div>
-				
-				<div class="col-md-4 col-sm-6 gallery-grid gal_c gal_d">
-					<div class="gallery-single fix">
-						<img src="uploads/gallery_img-05.jpg" class="img-fluid" alt="Image">
-						<div class="img-overlay">
-							<h3>Vegetable Food </h3>
-							<a href="uploads/gallery_img-05.jpg" data-rel="prettyPhoto[gal]" class="hoverbutton global-radius"><i class="fa fa-picture-o"></i></a>
-						</div>
-					</div>
-				</div>
-				
-				<div class="col-md-4 col-sm-6 gallery-grid gal_c gal_d">
-					<div class="gallery-single fix">
-						<img src="uploads/gallery_img-06.jpg" class="img-fluid" alt="Image">
-						<div class="img-overlay">
-							<h3>Vegetable Food </h3>
-							<a href="uploads/gallery_img-06.jpg" data-rel="prettyPhoto[gal]" class="hoverbutton global-radius"><i class="fa fa-picture-o"></i></a>
-						</div>
-					</div>
-				</div>
-				
-				<div class="col-md-4 col-sm-6 gallery-grid gal_c gal_b">
-					<div class="gallery-single fix">
-						<img src="uploads/gallery_img-07.jpg" class="img-fluid" alt="Image">
-						<div class="img-overlay">
-							<h3>Vegetable Food </h3>
-							<a href="uploads/gallery_img-07.jpg" data-rel="prettyPhoto[gal]" class="hoverbutton global-radius"><i class="fa fa-picture-o"></i></a>
-						</div>
-					</div>
-				</div>
-				
-				<div class="col-md-4 col-sm-6 gallery-grid gal_d gal_c">
-					<div class="gallery-single fix">
-						<img src="uploads/gallery_img-08.jpg" class="img-fluid" alt="Image">
-						<div class="img-overlay">
-							<h3>Vegetable Food </h3>
-							<a href="uploads/gallery_img-08.jpg" data-rel="prettyPhoto[gal]" class="hoverbutton global-radius"><i class="fa fa-picture-o"></i></a>
-						</div>
-					</div>
-				</div>
-				
+			<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Palautelomake</title>
+<style>
+    .stars {
+        display: inline-block;
+    }
+
+    .star {
+        font-size: 2rem;
+        cursor: pointer;
+        color: gray;
+    }
+
+    .star:hover,
+    .star.active {
+        color: gold;
+    }
+</style>
+</head>
+<body>
+
+<h2>Anna palautetta</h2>
+
+<div id="rating-stars" class="stars">
+    <span class="star" data-value="1">&#9733;</span>
+    <span class="star" data-value="2">&#9733;</span>
+    <span class="star" data-value="3">&#9733;</span>
+    <span class="star" data-value="4">&#9733;</span>
+    <span class="star" data-value="5">&#9733;</span>
+</div>
+
+<br><br>
+
+<textarea id="feedback" placeholder="Kirjoita palautteesi tähän..." rows="4" cols="50"></textarea><br><br>
+
+<button onclick="submitFeedback()">Lähetä palautetta</button>
+
+<script>
+    let rating = 0;
+
+    const stars = document.querySelectorAll('.star');
+
+    stars.forEach(star => {
+        star.addEventListener('click', () => {
+            rating = parseInt(star.getAttribute('data-value'));
+            highlightStars(rating);
+        });
+    });
+
+    function highlightStars(value) {
+        stars.forEach(star => {
+            if (parseInt(star.getAttribute('data-value')) <= value) {
+                star.classList.add('active');
+            } else {
+                star.classList.remove('active');
+            }
+        });
+    }
+
+    function submitFeedback() {
+        const feedback = document.getElementById('feedback').value.trim();
+        if (rating === 0) {
+            alert('Anna arvio tähdillä!');
+            return;
+        }
+        if (feedback === '') {
+            alert('Kirjoita palautteesi!');
+            return;
+        }
+        // Voit tässä vaiheessa tehdä jotain palautteella, esim. lähettää sen palvelimelle
+        console.log('Arvio:', rating);
+        console.log('Palautteesi:', feedback);
+        // Tässä voit lisätä logiikan palautteen käsittelyä varten, kuten lähettää sen palvelimelle
+        alert('Palautteesi on vastaanotettu. Kiitos!');
+    }
+</script>
+
+</body>
+</html>
+
 				
 				
 			</div>
