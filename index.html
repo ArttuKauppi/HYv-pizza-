@@ -86,11 +86,9 @@
 					<div class="slider-content text-white">
 						<div class="in-box">
                             <head>
-                                <!DOCTYPE html>
-                                    <html lang="en">
+                                
                                     <head>
-                                        <meta charset="UTF-8">
-                                        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                                        
                                         <title>Luo tili</title>
                                     </head>
                                     <body>
@@ -119,10 +117,10 @@
                                     
                                         <p id="tervetulo_teksti">Tervetuloa </p>
                                         <form id="kirjautumis_lomake">
-                                            <h1><input id="nimi" type="text" placeholder="Syötä nimesi" value="" />
+                                            <h1><input id="nimi" type="text" placeholder="Syötä nimesi" value="" required/>
                                                 
                                             </h1>
-                                                <h3><input id="salasana" type="password" placeholder="salasana" value="" /></h3>
+                                                <h3><input id="salasana" type="password" placeholder="salasana" value="" required/></h3>
                                                 <h3><input type="submit" value="Kirjaudu sisään" id="kirjaudu_nappi" onclick="kirjaudu()" /></h3>
                                                 
                                             </form>
@@ -240,9 +238,7 @@
 <div id="yhteishinta"></div>
 
 			</div>
-			<!DOCTYPE html>
-<html lang="en">
-<head>
+		
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ostoskori</title>
@@ -451,53 +447,67 @@
     <span class="star" data-value="3">&#9733;</span>
     <span class="star" data-value="4">&#9733;</span>
     <span class="star" data-value="5">&#9733;</span>
+   
+
 </div>
+
     </div>
 
 <div class="section-title text-center">
-<textarea id="feedback" placeholder="Kirjoita palautteesi tähän..." rows="4" cols="50"></textarea><br><br>
-
-<button onclick="submitFeedback()">Lähetä palautetta</button>
-</div>
-<script>
-    let rating = 0;
-
-    const stars = document.querySelectorAll('.star');
-
-    stars.forEach(star => {
-        star.addEventListener('click', () => {
-            rating = parseInt(star.getAttribute('data-value'));
-            highlightStars(rating);
-        });
-    });
-
-    function highlightStars(value) {
+    <div class="section-title text-center">
+        <textarea id="feedback" placeholder="Kirjoita palautteesi tähän..." rows="4" cols="50" required ></textarea><br><br>
+        <textarea id="posti" placeholder="posti" rows="4" cols="50" required></textarea><br><br>
+    </div>
+    <button onclick="submitFeedback()">Lähetä palautetta</button>
+    
+    <script>
+        let rating = 0;
+    
+        const stars = document.querySelectorAll('.star');
+    
         stars.forEach(star => {
-            if (parseInt(star.getAttribute('data-value')) <= value) {
-                star.classList.add('active');
-            } else {
-                star.classList.remove('active');
-            }
+            star.addEventListener('click', () => {
+                rating = parseInt(star.getAttribute('data-value'));
+                highlightStars(rating);
+            });
         });
-    }
-
-    function submitFeedback() {
-        const feedback = document.getElementById('feedback').value.trim();
-        if (rating === 0) {
-            alert('Anna arvio tähdillä!');
-            return;
+    
+        function highlightStars(value) {
+            stars.forEach(star => {
+                if (parseInt(star.getAttribute('data-value')) <= value) {
+                    star.classList.add('active');
+                } else {
+                    star.classList.remove('active');
+                }
+            });
         }
-        if (feedback === '') {
-            alert('Kirjoita palautteesi!');
-            return;
+    
+        function submitFeedback() {
+            const feedback = document.getElementById('feedback').value.trim();
+            const posti = document.getElementById('posti').value.trim(); // Lisätty posti-muuttujan määrittely
+    
+            if (posti === '') { // Lisätty ehto sähköpostin pakollisuudelle
+                alert('Anna sähköpostisi');
+                return;
+            }
+           else if (rating === 0) {
+                alert('Anna arvio tähdillä!');
+                return;
+            }
+           else if (feedback === '') {
+                alert('Kirjoita palautteesi!');
+                return;
+            }
+            
+    
+            // Voit tässä vaiheessa tehdä jotain palautteella, esim. lähettää sen palvelimelle
+            console.log('Arvio:', rating);
+            console.log('Palautteesi:', feedback);
+            // Tässä voit lisätä logiikan palautteen käsittelyä varten, kuten lähettää sen palvelimelle
+            alert('Palautteesi on vastaanotettu. Kiitos!');
         }
-        // Voit tässä vaiheessa tehdä jotain palautteella, esim. lähettää sen palvelimelle
-        console.log('Arvio:', rating);
-        console.log('Palautteesi:', feedback);
-        // Tässä voit lisätä logiikan palautteen käsittelyä varten, kuten lähettää sen palvelimelle
-        alert('Palautteesi on vastaanotettu. Kiitos!');
-    }
-</script>
+    </script>
+    
 </body>
 </html>	
     <div class="copyrights">
