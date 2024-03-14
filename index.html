@@ -239,81 +239,36 @@
 
 			</div>
 		
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <title>Ostoskori</title>
 	
-    <script>
-        var ostoskori = []; // Alusta tyhjä ostoskori
-
-        function lisaa_tuote(nimi, hinta) {
-            ostoskori.push({ nimi: nimi, hinta: hinta }); // Lisää tuote ostoskoriin
-            paivitaOstoskori(); // Päivitä näyttö
-        }
-
-        function paivitaOstoskori() {
-            var ostoskoriElementti = document.getElementById("ostoskori");
-            var yhteishintaElementti = document.getElementById("yhteishinta");
-            var yhteishinta = 0;
-
-            ostoskoriElementti.innerHTML = ""; // Tyhjennä ensin ostoskorin näyttö
-
-            // Lisää jokainen tuote ostoskorista näyttöön ja laske yhteishinta
-            for (var i = 0; i < ostoskori.length; i++) {
-                var tuote = ostoskori[i];
-                var tuoteElementti = document.createElement("li");
-                tuoteElementti.textContent = tuote.nimi + " - " + tuote.hinta + "€";
-                ostoskoriElementti.appendChild(tuoteElementti);
-                yhteishinta += tuote.hinta;
-            }
-
-            // Päivitä yhteishinnan näyttö
-            yhteishintaElementti.textContent = "Yhteishinta: " + yhteishinta + "€";
-        }
-
-        function tilaa() {
-            // Simuloidaan tilauksen lähettäminen
-            alert("Tilaus lähetetty!");
-            // Tyhjennetään ostoskori ja päivitetään näyttö
-            ostoskori = [];
-            paivitaOstoskori();
-        }
-        function naytaosoite() {
-        document.getElementById('osoite').style.display = 'block';
-        }
-        
-        
-    </script>
+    <script type="text/javascript" language="javascript" src="js\osto.js"></script>
+    <script></script>
 </head>
 <body>
 
-	<h2></h2>
 	<form style="display: none;" id ="osoite">
-		<div class="section-label text-left" id ="osoite">
-		<label for="Katuosoite">Katuosoite:</label>
-		</div>
-		<input type="text" id="osoite" name="osoite"><br><br>
-		<div class="section-label text-left">
-		<label for="Postinumero">Postinumero:</label>
-	</div>
-		<input type="text" id="talo" name="talo"><br><br>
-		<div class="section-label text-left">
-		<label for="Talon numero">Talon numero:</label>
-		</div>
-		<input type="text" id="talonNumero" name="talonNumero"><br><br>
-		<div class="section-label text-left">
-		<label for="Lisätietoa">Lisätietoa:</label>
-	</div>
-		<input type="text" id="Lisätietoa" name="ovikoodi"><br><br>
-        <button style="display: block;" onclick="tilaa()"> Tilaa</button>
-
-	
-	</form>
-    <h3><button id="rekisteroitymislomake_nappi" onclick="naytaosoite()">Valmistele tilauksesi</button></h3>
-
-
-
-<!-- Ostoskorin näyttö -->
+        <div class="section-label text-left" id ="osoite">
+            <label for="Katuosoite">Katuosoite:</label>
+        </div>
+        <input type="text" id="osoite" name="osoite"><br><br>
+        <div class="section-label text-left">
+            <label for="Postinumero">Postinumero:</label>
+        </div>
+        <input type="text" id="talo" name="talo"><br><br>
+        <div class="section-label text-left">
+            <label for="Talon numero">Talon numero:</label>
+        </div>
+        <input type="text" id="talonNumero" name="talonNumero"><br><br>
+        <div class="section-label text-left">
+            <label for="Lisätietoa">Lisätietoa:</label>
+        </div>
+        <input type="text" id="Lisätietoa" name="ovikoodi"><br><br>
+        <button style="display: block;" onclick="tila()"> Tilaa</button>
+    </form>
+    
+    <h3><button id="nappi" onclick="naytaosoite()">Valmistele tilauksesi</button></h3>
+    
 
 </body>
 </html>
