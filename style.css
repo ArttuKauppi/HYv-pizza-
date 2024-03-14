@@ -102,7 +102,7 @@ h4 {
 }
 
 h5 {
-    font-size: 14px
+    font-size: 20px
 }
 
 h6 {
@@ -1581,7 +1581,8 @@ xclip
 }
 
 .message-box p {
-    margin-bottom: 20px;
+    color: #089404;
+    margin-bottom: 24px;
 }
 
 .message-box .lead {
