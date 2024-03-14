@@ -21,27 +21,35 @@ function laskeYhteishinta() {
     return yhteishinta;
 }
 
-// Tilausprosessi
-function teeTilaus() {
-    var yhteishinta = laskeYhteishinta();
+function tieto(){
+
     var osoite = document.getElementById("osoite").value;
     var talo = document.getElementById("talo").value;
     var talonNumero = document.getElementById("talonNumero").value;
     var ovikoodi = document.getElementById("ovikoodi").value;
+    
 
-    if (yhteishinta > 0) {
-        // Tässä voit toteuttaa tilauksen lähetyksen tai muun toiminnallisuuden
-        alert("Tilaus tehty! Yhteishinta: " + yhteishinta + "€. Osoite: " + osoite + ", Talo: " + talo + ", Talon numero: " + talonNumero + ", Ovikoodi: " + ovikoodi);
+}
+// Tilausprosessi
+function tila() {
+    var yhteishinta = laskeYhteishinta();
+    if (ostoskori.length > 0) { // Tarkista, että ostoskorissa on tuotteita ennen tilauksen tekemistä
+        
+        alert("Tilaus tehty! Yhteishinta: " + yhteishinta + "€");
         // Tyhjennä ostoskori tilauksen jälkeen
         ostoskori = [];
         paivitaOstoskori(); // Päivitä ostoskorin näyttö
     } else {
         alert("Ostoskorisi on tyhjä. Valitse ensin tuotteita.");
     }
+   
+
 }
 
+
+
 // Päivitä ostoskorin näyttö
-function paivitaOstoskori() {
+function paivitaOstoskori() {   
     var ostoskoriElementti = document.getElementById("ostoskori");
     var yhteishintaElementti = document.getElementById("yhteishinta");
     var yhteishinta = laskeYhteishinta();
@@ -68,3 +76,10 @@ function paivitaOstoskori() {
     // Päivitä yhteishinnan näyttö
     yhteishintaElementti.textContent = "Yhteishinta: " + yhteishinta + "€";
 }
+
+// Lisää monta tuotetta kerralla
+
+function naytaosoite() {
+    document.getElementById('osoite').style.display = 'block';
+    document.getElementById('nappi').style.display = 'none';
+    }
