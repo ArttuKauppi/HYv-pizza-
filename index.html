@@ -278,13 +278,18 @@
             ostoskori = [];
             paivitaOstoskori();
         }
+        function naytaosoite() {
+        document.getElementById('osoite').style.display = 'block';
+        }
+        
+        
     </script>
 </head>
 <body>
 
-	<h2>Osoitetiedot:</h2>
-	<form>
-		<div class="section-label text-left">
+	<h2></h2>
+	<form style="display: none;" id ="osoite">
+		<div class="section-label text-left" id ="osoite">
 		<label for="Katuosoite">Katuosoite:</label>
 		</div>
 		<input type="text" id="osoite" name="osoite"><br><br>
@@ -300,9 +305,11 @@
 		<label for="Lisätietoa">Lisätietoa:</label>
 	</div>
 		<input type="text" id="Lisätietoa" name="ovikoodi"><br><br>
+        <button style="display: block;" onclick="tilaa()"> Tilaa</button>
+
 	
 	</form>
-	<button onclick="tilaa()">Valmistele tilaus</button>
+    <h3><button id="rekisteroitymislomake_nappi" onclick="naytaosoite()">Valmistele tilauksesi</button></h3>
 
 
 
@@ -515,15 +522,9 @@
             <div class="footer-distributed">
                 <div class="footer-left">
                     <p class="footer-links">
-                        <a href="#">Home</a>
-                        <a href="#">Blog</a>
-                        <a href="#">Pricing</a>
-                        <a href="#">About</a>
-                        <a href="#">Faq</a>
-                        <a href="#">Contact</a>
-                    </p>
-                    <p class="footer-company-name">All Rights Reserved. &copy; 2018 <a href="#">Green Special</a> Design By : 
-					<a href="https://html.design/">html design</a></p>
+                      
+                        
+                    
                 </div>
             </div>
         </div><!-- end container -->
