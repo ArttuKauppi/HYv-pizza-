@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <!-- Basic -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">   
+<div id="about" class="section lb">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="message-box">                        
+                    <h5>
+                    <p>Meidän ravintolassa on mahtavat pizzat ja meillä käytetään vain kotimaalaisia ainesosia. Meillä on todella laaja valikoima, eli löydät varmasti jonkun pizzan mikä juuri sinulle kuuluu.  </p>
+                    <p>Meidän työntekiät ovat todella mukavia kaikille asiakkaille ja he kuuntelevat myös jos haluat tehdä pizzaan omia muutoksia. 
+                     Meillä on myös meidän oma verkkosivumme jota käytät tällä hetkellä, pystyt tilata oman pizzan menu kohdasta painamalla sen pizzan hintaa. 
+                     Hyvää pizzaista päivää toivottaa meidän henkilökunta</p>
+            <p>______________________________________________________________________________</p>
+    
+            <p>Our restaurant has great pizzas and we only use domestic ingredients. We have a really wide selection, so you are sure to find a pizza that belongs to you.</p>
+            <p>Our employees are really nice to all customers and they also listen if you want to make your own changes to the pizza. 
+                     We also have our own website that you are currently using, you can order your own pizza from the menu item by clicking on the price of that pizza. 
+                     Happy pizza day is wished by our staff</p></h5>
+                  
+                </div><!-- end messagebox -->
+            </div><!-- end col -->
+
+            <div class="col-md-6">
+                <div class="right-box-pro wow fadeIn">
+                    <img src="uploads/about_01.png" alt="" class="img-fluid img-rounded">
+                </div><!-- end media -->
+            </div><!-- end col -->
+        </div><!-- end row -->
+    </div><!-- end container -->
+</div><!-- end section -->
+
+
+
+<div id="menu" class="section lb">
+    <div class="container-fluid">
+        <div class="section-title text-center">
+            <h3>Menu</h3>
+            <h2>Ostoskori </h2>
+<ul id="ostoskori"></ul>
+
+<!-- Yhteishinta -->
+<div id="yhteishinta"></div>
+
+        </div>
+    
+
+<title>Ostoskori</title>
+
+<script type="text/javascript" language="javascript" src="js\osto.js"></script>
+<script></script>
+</head>
+<body>
+
+<form style="display: none;" id ="osoite">
+    <div class="section-label text-left" id ="osoite">
+        <label required  for="Katuosoite">Katuosoite:</label>
+    </div>
+    <input type="text" id="osoite" name="osoite"><br><br>
+    <div class="section-label text-left">
+        <label required for="Postinumero">Postinumero:</label>
+    </div>
+    <input type="text" id="talo" name="talo"><br><br>
+    <div class="section-label text-left">
+        <label required for="Talon numero">Talon numero:</label>
+    </div>
+    <input type="text" id="talonNumero" name="talonNumero"><br><br>
+    <div class="section-label text-left">
+        <label required for="Lisätietoa">Lisätietoa:</label>
+    </div>
+    <input type="text" id="Lisätietoa" name="ovikoodi"><br><br>
+    <button style="display: block;" onclick="tila()"> Tilaa</button>
+</form>
+
+<h3><button id="nappi" onclick="naytaosoite()">Valmistele tilauksesi</button></h3>
+
+
+</body>
+</html>
+
+
+
+<div class="row">
+<!-- Pizza1 -->
+<div class="col-md-3">
+    <div class="services-inner-box">
+        <div class="ser-icon">
+            <img src="uploads/menu-img-01.jpg" class="img-fluid" alt="" />
+        </div>
+        <h2>Pepperoni</h2>
+        <h1> <input type="button" value="12€" onclick="lisaa_tuote('Pepperoni', 12)" /> </h1>
+    <p>Pepperoni, cheese, tomato sauce (g)</p>	
+    </div>
+</div><!-- end col -->
+
+<div class="col-md-3">
+    <div class="services-inner-box">
+        <div class="ser-icon">
+            <img src="uploads/margherita-pizza.02.jpg" class="img-fluid" alt="" />
+        </div>
+        <h2>Margherita</h2>
+        <h1><input type="button" value="11€" onclick="lisaa_tuote('Margherita ', 11)" /></h1>
+        <p>Mozzarella, Basil, San Marzano tomatoes (g)</p>
+    </div>
+</div><!-- end col -->
+<!-- Pizza3 -->
+<div class="col-md-3">
+    <div class="services-inner-box">
+        <div class="ser-icon">
+            <img src="uploads/menu-img-03.jpg" class="img-fluid" alt="" />
+        </div>
+        <h2>Kana bbq</h2>
+        <h1><input type="button" value="12€" onclick="lisaa_tuote('Kana bbq', 12)" /></h1>
+    <p>Chicken, Barbecue sauce, cheese, olives, jalapeno, tomato sauce (g)</p>
+    </div>
+</div><!-- end col -->
+
+    
+
+    
+</div><!-- end col -->
+<!-- Lisää muita pizza-elementtejä samalla tavalla -->
+
+
+
+
+
+
+
+</div><!-- end row -->
+
+
+
+
+
+
+<div class="row">
+<!-- Pizza1 -->
+<div class="col-md-3">
+    <div class="services-inner-box">
+        <div class="ser-icon">
+            <img src="uploads/menu-img-04.jpg" class="img-fluid" alt="" />
+        </div>
+        <h2>Hawaiian</h2>
+        <h1><input type="button" value="12€" onclick="lisaa_tuote('Hawaiian', 12)" /></h1>
+    <p>Pineapple, ham slices, cheese, tomato sauce (g)</p>
+    </div>
+</div><!-- end col -->
+
+<div class="col-md-3">
+    <div class="services-inner-box">
+        <div class="ser-icon">	
+            <img src="uploads/menu-img-05.jpg" class="img-fluid" alt="" />
+        </div>
+        <h2>Napolitana</h2>
+        <h1><input type="button" value="13€" onclick="lisaa_tuote('Napolitana', 13)" /></h1>
+    <p>Cheese, olives, tomato sauce (g)</p>
+    </div>
+</div><!-- end col -->
+<!-- Pizza3 -->
+<div class="col-md-3">
+    <div class="services-inner-box">
+        <div class="ser-icon">
+            <img src="uploads/menu-img-06.jpg" class="img-fluid" alt="" />
+        </div>
+        <h2>Kasvis</h2>
+        <h1><input type="button" value="14€" onclick="lisaa_tuote('Kasvis', 14)" /></h1>
+    <p>Tomato, vegan cheese, basil, tomato slices (g)</p>
+    </div>
+  </div><!-- end col -->
+    
+
+    
+</div><!-- end col -->
+<!-- Lisää muita pizza-elementtejä samalla tavalla -->
+</div><!-- end row -->
+
+
+<html>
+<div id="gallery" class="section wb">
+    <div class="container-fluid">
+        
+    </div>
+</div>
+</html>
+
+<head>
+
+<title>Palautelomake</title>
+<style>
+.stars {
+    display: inline-block;
+}
+
+.star {
+    font-size: 2rem;
+    cursor: pointer;
+    color: gray;
+}
+
+.star:hover,
+.star.active {
+    color: gold;
+}
+</style>
+</head>
+<body>
+<div class="section-title text-center"> 
+<h6>Anna palautetta</h6>
+
+<div id="rating-stars" class="stars">
+<span class="star" data-value="1">&#9733;</span>
+<span class="star" data-value="2">&#9733;</span>
+<span class="star" data-value="3">&#9733;</span>
+<span class="star" data-value="4">&#9733;</span>
+<span class="star" data-value="5">&#9733;</span>
+
+
+</div>
+
+</div>
+
+<div class="section-title text-center">
+<div class="section-title text-center">
+    <textarea id="feedback" placeholder="Kirjoita palautteesi tähän..." rows="2" cols="50" required ></textarea><br><br>
+    <textarea id="posti" placeholder="sähköpostisi" type="email"cols="50" required></textarea>
+</div>
+<button onclick="submitFeedback()">Lähetä palautetta</button>
+
+<script>
+    let rating = 0;
+
+    const stars = document.querySelectorAll('.star');
+
+    stars.forEach(star => {
+        star.addEventListener('click', () => {
+            rating = parseInt(star.getAttribute('data-value'));
+            highlightStars(rating);
+        });
+    });
+
+    function highlightStars(value) {
+        stars.forEach(star => {
+            if (parseInt(star.getAttribute('data-value')) <= value) {
+                star.classList.add('active');
+            } else {
+                star.classList.remove('active');
+            }
+        });
+    }
+
+    function submitFeedback() {
+        const feedback = document.getElementById('feedback').value.trim();
+        const posti = document.getElementById('posti').value.trim(); // Lisätty posti-muuttujan määrittely
+
+        if (posti === '') { // Lisätty ehto sähköpostin pakollisuudelle
+            alert('Anna sähköpostisi');
+            return;
+        }
+       else if (rating === 0) {
+            alert('Anna arvio tähdillä!');
+            return;
+        }
+        if (feedback === '') {
+            alert('Kirjoita palautteesi!');
+            return;
+        }
+        
+
+        // Voit tässä vaiheessa tehdä jotain palautteella, esim. lähettää sen palvelimelle
+        console.log('Arvio:', rating);
+        console.log('Palautteesi:', feedback);
+        // Tässä voit lisätä logiikan palautteen käsittelyä varten, kuten lähettää sen palvelimelle
+        alert('Palautteesi on vastaanotettu. Kiitos!');
+    }
+</script>
+
+</body>
+</html>	
+<div class="copyrights">
+    <div class="container-fluid">
+        <div class="footer-distributed">
+            <div class="footer-left">
+                <p class="footer-links">
+                  
+                    
+                
+            </div>
+        </div>
+    </div><!-- end container -->
+</div><!-- end copyrights -->
+
+<a href="#" id="scroll-to-top" class="dmtop global-radius"><i class="fa fa-angle-up"></i></a>
+
+<!-- ALL JS FILES -->
+<script src="js/all.js"></script>
+<!-- Camera Slider -->
+<script src="js/jquery.mobile.customized.min.js"></script>
+<script src="js/jquery.easing.1.3.js"></script> 
+<script src="js/parallaxie.js"></script>
+<script src="js/headline.js"></script>
+<script src="js/owl.carousel.js"></script>
+<script src="js/jquery.nicescroll.min.js"></script>
+<!-- Contact form JavaScript -->
+<script src="js/jqBootstrapValidation.js"></script>
+<script src="js/contact_me.js"></script>
+<!-- ALL PLUGINS -->
+<script src="js/custom.js"></script>
+</body>
+</html>
+
