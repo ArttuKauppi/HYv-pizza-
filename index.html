@@ -86,106 +86,102 @@
 					<div class="slider-content text-white">
 						<div class="in-box">
                             <head>
-                                
-                                    <head>
                                         
-                                        <title>Luo tili</title>
-                                    </head>
-                                    <body>
-                                        <script type="text/javascript" language="javascript" src="js\gr.js"></script>
-                                        <script type="text/javascript">
-                                            function tarkistaKirjautuminen() {
-                                                var kirjautunut = localStorage.getItem('kirjautunut');
-                                                var kirjauduUlosNappi = document.getElementById('kirjaudu_ulos_nappi');
-                                
-                                                if (kirjautunut) {
-                                                    kirjauduUlosNappi.style.display = 'block';
-                                                } else {
-                                                    kirjauduUlosNappi.style.display = 'none';
-                                                }
-                                            }
-                                
-                                            function kirjauduUlos() {
-                                                localStorage.removeItem('kirjautunut');
-                                                tarkistaKirjautuminen(); 
-                                            }
-                                
-                                            document.addEventListener('DOMContentLoaded', function () {
-                                                tarkistaKirjautuminen();
-                                            });
-                                        </script>
-                                    
-                                        <p id="tervetulo_teksti">Tervetuloa </p>
-                                        <form id="kirjautumis_lomake">
-                                            <h1><input id="nimi" type="text" placeholder="Syötä nimesi" value="" required/>
-                                                
-                                            </h1>
-                                                <h3><input id="salasana" type="password" placeholder="salasana" value="" required/></h3>
-                                                <h3><input type="submit" value="Kirjaudu sisään" id="kirjaudu_nappi" onclick="kirjaudu()" /></h3>
-                                                
-                                            </form>
-                                            <h2><button id="kirjaudu_ulos_nappi" style="display: none;" onclick="kirjauduUlos(localStorage.clear())">Kirjaudu ulos</button></h2>
-                                            <h3><button id="rekisteroitymislomake_nappi" onclick="naytaRekisteroitymislomake()">Luo tili</button></h3>
-                                
-                                            <h4>	
-                                                                  
-                                                  <li class="nav-item" id="menu_nappi" style="display: none;">
-                                                    <a class="nav-link js-scroll-trigger" href="#menu"><span>Menu</span></a>
-                                                </li>	  
-                                            </h4>
-                                            
-                                
-                                      <form id="registrationForm" style="display: none;">
-                                        <h3>
-                                          <label for="username">Käyttäjänimi:</label><br>
-                                          <input type="text" id="username" name="username" required><br>
-                                          
-                                          <label for="email">Sähköposti:</label><br>
-                                          <input type="email" id="email" name="email" required><br>
-                                          
-                                          <label for="password">Salasana:</label><br>
-                                          <input type="password" id="password" name="password" required><br>
-                                          
-                                          <button type="submit" id="registerButton">Rekisteröidy</button>
-                                        </h3>
-                                      </form>
-                                      
-                                      <div id="registrationDetails" style="display:none;">
-                                        <h2></h2>
-                                        <p id="usernameDisplay"></p>
-                                        <p id="emailDisplay"></p>
-                                        <p id="passwordDisplay"></p>
-                                      </div>
-                                      
-                                      <script>
-                                        function naytaRekisteroitymislomake() {
-                                          document.getElementById('registrationForm').style.display = 'block';
-                                          document.getElementById('kirjautumis_lomake').style.display = 'none'; // Piilotetaan kirjautumislomake
-                                          document.getElementById('rekisteroitymislomake_nappi').style.display = 'none'; // Piilotetaan "Luo tili" -nappi
-                                          document.getElementById('tervetulo_teksti').style.display = 'none'; // Piilotetaan "Tervetuloa" -teksti
-                                        }
-                                        
-                                        document.getElementById('registrationForm').addEventListener('submit', function(event) {
-                                          event.preventDefault(); // Estää lomakkeen lähettämisen
-                                        
-                                          // Haetaan syötetyt tiedot
-                                          var username = document.getElementById('username').value;
-                                          var email = document.getElementById('email').value;
-                                          var password = document.getElementById('password').value;
-                                          
-                                          // Piilotetaan rekisteröintilomake
-                                          document.getElementById('registrationForm').style.display = 'none';
-                                          
-                                          // Näytetään rekisteröintitiedot
-                                          document.getElementById('usernameDisplay').innerText = 'Tervetuloa: ' + username;
-                                       
-                                          // Näytetään rekisteröintitiedot-div
-                                          document.getElementById('registrationDetails').style.display = 'block';
-                                        });
-                                      </script>
-                                    </body>       
-                                </html>
+                                <title>Luo tili</title>
                             </head>
+                            <body>
+                                <script type="text/javascript" language="javascript" src="js\gr.js"></script>
+                                <script type="text/javascript">
+                                    function tarkistaKirjautuminen() {
+                                        var kirjautunut = localStorage.getItem('kirjautunut');
+                                        var kirjauduUlosNappi = document.getElementById('kirjaudu_ulos_nappi');
+                        
+                                        if (kirjautunut) {
+                                            kirjauduUlosNappi.style.display = 'block';
+                                        } else {
+                                            kirjauduUlosNappi.style.display = 'none';
+                                        }
+                                    }
+                        
+                                    function kirjauduUlos() {
+                                        localStorage.removeItem('kirjautunut');
+                                        tarkistaKirjautuminen(); 
+                                    }
+                        
+                                    document.addEventListener('DOMContentLoaded', function () {
+                                        tarkistaKirjautuminen();
+                                    });
+                                </script>
+                            
+                                <p id="tervetulo_teksti">Tervetuloa </p>
+                                <form id="kirjautumis_lomake">
+                                    <h1><input id="nimi" type="text" placeholder="Syötä nimesi" value="" required/>
+                                        
+                                    </h1>
+                                        <h3><input id="salasana" type="password" placeholder="salasana" value="" required/></h3>
+                                        <h3><input type="submit" value="Kirjaudu sisään" id="kirjaudu_nappi" onclick="kirjaudu()" /></h3>
+                                        
+                                    </form>
+                                    <h2><button id="kirjaudu_ulos_nappi" style="display: none;" onclick="kirjauduUlos(localStorage.clear())">Kirjaudu ulos</button></h2>
+                                    <h3><button id="rekisteroitymislomake_nappi" onclick="naytaRekisteroitymislomake()">Luo tili</button></h3>
+                        
+                                    <h4>	
+                                                          
+                                          <li class="nav-item" id="menu_nappi" style="display: none;">
+                                            <a class="nav-link js-scroll-trigger" href="#menu"><span>Menu</span></a>
+                                        </li>	  
+                                    </h4>
+                                    
+                        
+                              <form id="registrationForm" style="display: none;">
+                                <h3>
+                                  <label for="username">Käyttäjänimi:</label><br>
+                                  <input type="text" id="username" name="username" required><br>
+                                  
+                                  <label for="email">Sähköposti:</label><br>
+                                  <input type="email" id="email" name="email" required><br>
+                                  
+                                  <label for="password">Salasana:</label><br>
+                                  <input type="password" id="password" name="password" required><br>
+                                  
+                                  <button type="submit" id="registerButton">Rekisteröidy</button>
+                                </h3>
+                              </form>
+                              
+                              <div id="registrationDetails" style="display:none;">
+                                <h2></h2>
+                                <p id="usernameDisplay"></p>
+                                <p id="emailDisplay"></p>
+                                <p id="passwordDisplay"></p>
+                              </div>
+                              
+                              <script>
+                                function naytaRekisteroitymislomake() {
+                                  document.getElementById('registrationForm').style.display = 'block';
+                                  document.getElementById('kirjautumis_lomake').style.display = 'none'; // Piilotetaan kirjautumislomake
+                                  document.getElementById('rekisteroitymislomake_nappi').style.display = 'none'; // Piilotetaan "Luo tili" -nappi
+                                  document.getElementById('tervetulo_teksti').style.display = 'none'; // Piilotetaan "Tervetuloa" -teksti
+                                }
+                                
+                                document.getElementById('registrationForm').addEventListener('submit', function(event) {
+                                  event.preventDefault(); // Estää lomakkeen lähettämisen
+                                
+                                  // Haetaan syötetyt tiedot
+                                  var username = document.getElementById('username').value;
+                                  var email = document.getElementById('email').value;
+                                  var password = document.getElementById('password').value;
+                                  
+                                  // Piilotetaan rekisteröintilomake
+                                  document.getElementById('registrationForm').style.display = 'none';
+                                  
+                                  // Näytetään rekisteröintitiedot
+                                  document.getElementById('usernameDisplay').innerText = 'Tervetuloa: ' + username;
+                               
+                                  // Näytetään rekisteröintitiedot-div
+                                  document.getElementById('registrationDetails').style.display = 'block';
+                                });
+                              </script>
+                            </body>
                         </div>
                     </div>
                 </div>
