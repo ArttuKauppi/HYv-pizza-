@@ -83,3 +83,24 @@ function naytaosoite() {
     document.getElementById('osoite').style.display = 'block';
     document.getElementById('nappi').style.display = 'none';
     }
+    function muokkaa() {
+        document.getElementById('tayte').style.display = 'block';
+        }
+        function muokkaa2() {
+            document.getElementById('tayte2').style.display = 'block';
+            }
+            function muokkaa3() {
+                document.getElementById('tayte3').style.display = 'block';
+                }
+                function muokkaa4() {
+                    document.getElementById('tayte4').style.display = 'block';
+                    }
+                    function muokkaa5() {
+                        document.getElementById('tayte5').style.display = 'block';
+                        }
+                        function muokkaa6() {
+                            document.getElementById('tayte6').style.display = 'block';
+                            }
+                                        
+                
+    
