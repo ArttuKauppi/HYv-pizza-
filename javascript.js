@@ -1,4 +1,4 @@
 
 function redirect(){
-    window.location.href="täytteet.html";
+    window.location.href="taytteet.html";
 }
