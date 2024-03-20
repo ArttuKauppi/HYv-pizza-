@@ -86,102 +86,106 @@
 					<div class="slider-content text-white">
 						<div class="in-box">
                             <head>
+                                
+                                    <head>
                                         
-                                <title>Luo tili</title>
-                            </head>
-                            <body>
-                                <script type="text/javascript" language="javascript" src="js\gr.js"></script>
-                                <script type="text/javascript">
-                                    function tarkistaKirjautuminen() {
-                                        var kirjautunut = localStorage.getItem('kirjautunut');
-                                        var kirjauduUlosNappi = document.getElementById('kirjaudu_ulos_nappi');
-                        
-                                        if (kirjautunut) {
-                                            kirjauduUlosNappi.style.display = 'block';
-                                        } else {
-                                            kirjauduUlosNappi.style.display = 'none';
-                                        }
-                                    }
-                        
-                                    function kirjauduUlos() {
-                                        localStorage.removeItem('kirjautunut');
-                                        tarkistaKirjautuminen(); 
-                                    }
-                        
-                                    document.addEventListener('DOMContentLoaded', function () {
-                                        tarkistaKirjautuminen();
-                                    });
-                                </script>
-                            
-                                <p id="tervetulo_teksti">Tervetuloa </p>
-                                <form id="kirjautumis_lomake">
-                                    <h1><input id="nimi" type="text" placeholder="Syötä nimesi" value="" required/>
-                                        
-                                    </h1>
-                                        <h3><input id="salasana" type="password" placeholder="salasana" value="" required/></h3>
-                                        <h3><input type="submit" value="Kirjaudu sisään" id="kirjaudu_nappi" onclick="kirjaudu()" /></h3>
-                                        
-                                    </form>
-                                    <h2><button id="kirjaudu_ulos_nappi" style="display: none;" onclick="kirjauduUlos(localStorage.clear())">Kirjaudu ulos</button></h2>
-                                    <h3><button id="rekisteroitymislomake_nappi" onclick="naytaRekisteroitymislomake()">Luo tili</button></h3>
-                        
-                                    <h4>	
-                                                          
-                                          <li class="nav-item" id="menu_nappi" style="display: none;">
-                                            <a class="nav-link js-scroll-trigger" href="#menu"><span>Menu</span></a>
-                                        </li>	  
-                                    </h4>
+                                        <title>Luo tili</title>
+                                    </head>
+                                    <body>
+                                        <script type="text/javascript" language="javascript" src="js\gr.js"></script>
+                                        <script type="text/javascript">
+                                            function tarkistaKirjautuminen() {
+                                                var kirjautunut = localStorage.getItem('kirjautunut');
+                                                var kirjauduUlosNappi = document.getElementById('kirjaudu_ulos_nappi');
+                                
+                                                if (kirjautunut) {
+                                                    kirjauduUlosNappi.style.display = 'block';
+                                                } else {
+                                                    kirjauduUlosNappi.style.display = 'none';
+                                                }
+                                            }
+                                
+                                            function kirjauduUlos() {
+                                                localStorage.removeItem('kirjautunut');
+                                                tarkistaKirjautuminen(); 
+                                            }
+                                
+                                            document.addEventListener('DOMContentLoaded', function () {
+                                                tarkistaKirjautuminen();
+                                            });
+                                        </script>
                                     
-                        
-                              <form id="registrationForm" style="display: none;">
-                                <h3>
-                                  <label for="username">Käyttäjänimi:</label><br>
-                                  <input type="text" id="username" name="username" required><br>
-                                  
-                                  <label for="email">Sähköposti:</label><br>
-                                  <input type="email" id="email" name="email" required><br>
-                                  
-                                  <label for="password">Salasana:</label><br>
-                                  <input type="password" id="password" name="password" required><br>
-                                  
-                                  <button type="submit" id="registerButton">Rekisteröidy</button>
-                                </h3>
-                              </form>
-                              
-                              <div id="registrationDetails" style="display:none;">
-                                <h2></h2>
-                                <p id="usernameDisplay"></p>
-                                <p id="emailDisplay"></p>
-                                <p id="passwordDisplay"></p>
-                              </div>
-                              
-                              <script>
-                                function naytaRekisteroitymislomake() {
-                                  document.getElementById('registrationForm').style.display = 'block';
-                                  document.getElementById('kirjautumis_lomake').style.display = 'none'; // Piilotetaan kirjautumislomake
-                                  document.getElementById('rekisteroitymislomake_nappi').style.display = 'none'; // Piilotetaan "Luo tili" -nappi
-                                  document.getElementById('tervetulo_teksti').style.display = 'none'; // Piilotetaan "Tervetuloa" -teksti
-                                }
+                                        <p id="tervetulo_teksti">Tervetuloa </p>
+                                        <form id="kirjautumis_lomake">
+                                            <h1><input id="nimi" type="text" placeholder="Syötä nimesi" value="" required/>
+                                                
+                                            </h1>
+                                                <h3><input id="salasana" type="password" placeholder="salasana" value="" required/></h3>
+                                                <h3><input type="submit" value="Kirjaudu sisään" id="kirjaudu_nappi" onclick="kirjaudu()" /></h3>
+                                                
+                                            </form>
+                                            <h2><button id="kirjaudu_ulos_nappi" style="display: none;" onclick="kirjauduUlos(localStorage.clear())">Kirjaudu ulos</button></h2>
+                                            <h3><button id="rekisteroitymislomake_nappi" onclick="naytaRekisteroitymislomake()">Luo tili</button></h3>
                                 
-                                document.getElementById('registrationForm').addEventListener('submit', function(event) {
-                                  event.preventDefault(); // Estää lomakkeen lähettämisen
+                                            <h4>	
+                                                                  
+                                                  <li class="nav-item" id="menu_nappi" style="display: none;">
+                                                    <a class="nav-link js-scroll-trigger" href="#menu"><span>Menu</span></a>
+                                                </li>	  
+                                            </h4>
+                                            
                                 
-                                  // Haetaan syötetyt tiedot
-                                  var username = document.getElementById('username').value;
-                                  var email = document.getElementById('email').value;
-                                  var password = document.getElementById('password').value;
-                                  
-                                  // Piilotetaan rekisteröintilomake
-                                  document.getElementById('registrationForm').style.display = 'none';
-                                  
-                                  // Näytetään rekisteröintitiedot
-                                  document.getElementById('usernameDisplay').innerText = 'Tervetuloa: ' + username;
-                               
-                                  // Näytetään rekisteröintitiedot-div
-                                  document.getElementById('registrationDetails').style.display = 'block';
-                                });
-                              </script>
-                            </body>
+                                      <form id="registrationForm" style="display: none;">
+                                        <h3>
+                                          <label for="username">Käyttäjänimi:</label><br>
+                                          <input type="text" id="username" name="username" required><br>
+                                          
+                                          <label for="email">Sähköposti:</label><br>
+                                          <input type="email" id="email" name="email" required><br>
+                                          
+                                          <label for="password">Salasana:</label><br>
+                                          <input type="password" id="password" name="password" required><br>
+                                          
+                                          <button type="submit" id="registerButton">Rekisteröidy</button>
+                                        </h3>
+                                      </form>
+                                      
+                                      <div id="registrationDetails" style="display:none;">
+                                        <h2></h2>
+                                        <p id="usernameDisplay"></p>
+                                        <p id="emailDisplay"></p>
+                                        <p id="passwordDisplay"></p>
+                                      </div>
+                                      
+                                      <script>
+                                        function naytaRekisteroitymislomake() {
+                                          document.getElementById('registrationForm').style.display = 'block';
+                                          document.getElementById('kirjautumis_lomake').style.display = 'none'; // Piilotetaan kirjautumislomake
+                                          document.getElementById('rekisteroitymislomake_nappi').style.display = 'none'; // Piilotetaan "Luo tili" -nappi
+                                          document.getElementById('tervetulo_teksti').style.display = 'none'; // Piilotetaan "Tervetuloa" -teksti
+                                        }
+                                        
+                                        document.getElementById('registrationForm').addEventListener('submit', function(event) {
+                                          event.preventDefault(); // Estää lomakkeen lähettämisen
+                                        
+                                          // Haetaan syötetyt tiedot
+                                          var username = document.getElementById('username').value;
+                                          var email = document.getElementById('email').value;
+                                          var password = document.getElementById('password').value;
+                                          
+                                          // Piilotetaan rekisteröintilomake
+                                          document.getElementById('registrationForm').style.display = 'none';
+                                          
+                                          // Näytetään rekisteröintitiedot
+                                          document.getElementById('usernameDisplay').innerText = 'Tervetuloa: ' + username;
+                                       
+                                          // Näytetään rekisteröintitiedot-div
+                                          document.getElementById('registrationDetails').style.display = 'block';
+                                        });
+                                      </script>
+                                    </body>       
+                                </html>
+                            </head>
                         </div>
                     </div>
                 </div>
@@ -274,12 +278,33 @@
 <div class="row">
     <!-- Pizza1 -->
     <div class="col-md-3">
+
+
+       
         <div class="services-inner-box">
             <div class="ser-icon">
                 <img src="uploads/menu-img-01.jpg" class="img-fluid" alt="" />
             </div>
             <h2>Pepperoni</h2>
             <h1> <input type="button" value="12€" onclick="lisaa_tuote('Pepperoni', 12)" /> <input type="button" value="Iso +2€"  onclick="lisaa_tuote('Iso Pepperoni', 14)" /> </h1>
+            <h1><input type="button" value="edit" onclick="muokkaa()" /> </h1>
+            <form style="display: none; " id ="tayte"> 
+                <div class="section-label text-center" id ="Pepperoni">
+                    <input type="checkbox" value="2€"  > Extra Pepperoni</input>
+                </div>
+                <div class="section-label text-center" id ="juusto">
+                    <input type="checkbox" value="2€" > Extra juusto</input>
+                </div>
+                <div class="section-label text-center" id ="juusto">
+                    <input type="checkbox" value="2€"  > Gluteeniton pohja</input>
+                </div>
+    
+    
+    
+    
+    
+            </form>
+           
 
 	    <p>Pepperoni, cheese, tomato sauce (g)</p>	
         </div>
@@ -291,7 +316,23 @@
                 <img src="uploads/margherita-pizza.02.jpg" class="img-fluid" alt="" />
             </div>
             <h2>Margherita</h2>
+            
             <h1><input type="button" value="11€" onclick="lisaa_tuote('Margherita ', 11)" /> <input type="button" value="Iso +2€" onclick="lisaa_tuote('Iso Margherita ', 13)" /> </h1>
+            <h1><input type="button" value="edit" onclick="muokkaa2()" /> </h1>
+            <form style="display: none; " id ="tayte2"> 
+
+                <div class="section-label text-center" id ="juusto">
+                    <input type="checkbox" value="2€" > Extra juusto</input>
+                </div>
+                <div class="section-label text-center" id ="juusto">
+                    <input type="checkbox" value="2€"  > Gluteeniton pohja</input>
+                </div>
+    
+    
+    
+    
+    
+            </form>
             <p>Mozzarella, Basil, San Marzano tomatoes (g)</p>
         </div>
     </div><!-- end col -->
@@ -302,8 +343,28 @@
                 <img src="uploads/menu-img-03.jpg" class="img-fluid" alt="" />
             </div>
             <h2>Kana bbq</h2>
+            
             <h1><input type="button" value="12€" onclick="lisaa_tuote('Kana bbq', 12)" /> <input type="button" value="Iso +2€" onclick="lisaa_tuote('Iso Kana bbq', 14)"> </h1>
-	    <p>Chicken, Barbecue sauce, cheese, olives, jalapeno, tomato sauce (g)</p>
+            <h1><input type="button" value="edit" onclick="muokkaa3()" /> </h1>
+            <form style="display: none; " id ="tayte3"> 
+
+                <div class="section-label text-center" id ="juusto">
+                    <input type="checkbox" value="2€" > Extra juusto</input>
+                </div>
+                <div class="section-label text-center" id ="juusto">
+                    <input type="checkbox" value="2€"  > Gluteeniton pohja</input>
+                </div>
+                <div class="section-label text-center" id ="juusto">
+                    <input type="checkbox" value="2€"  > Extra jalapeno</input>
+                </div>
+    
+    
+    
+    
+    
+            </form>
+           
+            <p>Chicken, Barbecue sauce, cheese, olives, jalapeno, tomato sauce (g)</p>
         </div>
         
     </div><!-- end col -->
@@ -315,9 +376,8 @@
             </div>
             <h2>Fantasia</h2>
             <h1><input type="button" value="13€" onclick="lisaa_tuote('Fantasia', 13)" /> <input type="button" value="Iso +2€" onclick="lisaa_tuote('Iso Fantasia', 15)" /> </h1>
-            <h1><input type="button" value="muokkaa" onclick="redirect()" /> </h1>
+            <h1><input type="button" value="edit" onclick="redirect()" /> </h1>
         <p>3-5 own toppings</p>
-        <p>3 own toppings</p>
         </div>
     </div><!-- end col -->
 
@@ -347,8 +407,25 @@
             </div>
             <h2>Hawaiian</h2>
             <h1><input type="button" value="12€" onclick="lisaa_tuote('Hawaiian', 12)" /> <input type="button" value="Iso +2€" onclick="lisaa_tuote('Iso Hawaiian', 14)" /> </h1>
+            <h1><input type="button" value="edit" onclick="muokkaa5()" /> </h1>
+            <form style="display: none; " id ="tayte5"> 
 
-	    <p>Pineapple, ham slices, cheese, tomato sauce (g)</p>
+                <div class="section-label text-center" id ="juusto">
+                    <input type="checkbox" value="2€" > Extra juusto</input>
+                </div>
+                <div class="section-label text-center" id ="juusto">
+                    <input type="checkbox" value="2€"  > Gluteeniton pohja</input>
+                </div>
+                <div class="section-label text-center" id ="juusto">
+                    <input type="checkbox" value="2€"  > Extra Kinkku</input>
+                </div>
+    
+    
+    
+    
+    
+            </form>
+            <p>Pineapple, ham slices, cheese, tomato sauce (g)</p>
         </div>
     </div><!-- end col -->
     
@@ -358,9 +435,27 @@
                 <img src="uploads/menu-img-05.jpg" class="img-fluid" alt="" />
             </div>
             <h2>Napolitana</h2>
+            
             <h1><input type="button" value="13€" onclick="lisaa_tuote('Napolitana', 13)" /> <input type="button" value="Iso +2€" onclick="lisaa_tuote('Iso Napolitana', 15)" /></h1>
+            <h1><input type="button" value="edit" onclick="muokkaa5()" /> </h1>
+            <form style="display: none; " id ="tayte5"> 
 
-	    <p>Cheese, olives, tomato sauce (g)</p>
+                <div class="section-label text-center" id ="juusto">
+                    <input type="checkbox" value="2€" > Extra juusto</input>
+                </div>
+                <div class="section-label text-center" id ="juusto">
+                    <input type="checkbox" value="2€"  > Gluteeniton pohja</input>
+                </div>
+                <div class="section-label text-center" id ="juusto">
+                    <input type="checkbox" value="2€"  > Extra oliivi</input>
+                </div>
+    
+    
+    
+    
+    
+            </form>'
+        <p>Cheese, olives, tomato sauce (g)</p>
         </div>
     </div><!-- end col -->
     <!-- Pizza3 -->
@@ -371,7 +466,23 @@
             </div>
             <h2>Kasvis</h2>
             <h1><input type="button" value="14€" onclick="lisaa_tuote('Kasvis', 14)" /> <input type="button" value="Iso +2€" onclick="lisaa_tuote('Iso Kasvis', 16)" /></h1>
-	    <p>Tomato, vegan cheese, basil, tomato slices (g)</p>
+            <h1><input type="button" value="edit" onclick="muokkaa6()" /> </h1>
+            <form style="display: none; " id ="tayte6"> 
+
+                <div class="section-label text-center" id ="juusto">
+                    <input type="checkbox" value="2€" > Extra juusto</input>
+                </div>
+                <div class="section-label text-center" id ="juusto">
+                    <input type="checkbox" value="2€"  > Gluteeniton pohja</input>
+                </div>
+                
+    
+    
+    
+    
+    
+            </form>
+            <p>Tomato, vegan cheese, basil, tomato slices (g)</p>
         </div>
         
       </div><!-- end col -->
@@ -381,22 +492,22 @@
             <div class="ser-icon">
                 <img src="uploads/menu-img-06.jpg" class="img-fluid" alt="" />
             </div>
-
             <h2>Fantasia</h2>
-            <h1><input type="button" value="16€" onclick="lisaa_tuote('Fantasia', 16)" /> <input type="button" value="Iso +2€" onclick="lisaa_tuote('Iso Kasvis', 16)" /> </h1>
+            <h1><input type="button" value="16€" onclick="lisaa_tuote('Fantasia', 16)" /> <input type="button" value="Iso +2€" onclick="lisaa_tuote('Iso Fantasia', 18)" /></h1>
         <p>5 own toppings</p>
-
-            
+        </div>
+    </div><!-- end col -->
+    <!-- Lisää muita pizza-elementtejä samalla tavalla -->
 </div><!-- end row -->
 
 
-
+<html>
 	<div id="gallery" class="section wb">
 		<div class="container-fluid">
 			
         </div>
     </div>
-
+</html>
 
 <head>
 
