@@ -552,83 +552,70 @@ e<!DOCTYPE html>
 
                 </div>
 	 
-<head>
-
-<title>Palautelomake</title>
-<style>
-    .stars {
-        display: inline-block;
-    }
-
-    .star {
-        font-size: 2rem;
-        cursor: pointer;
-        color: gray;
-    }
-
-    .star:hover,
-    .star.active {
-        color: gold;
-    }
-</style>
-</head>
-<body>
-    <div class="section-title text-center"> 
-<h6>Anna palautetta</h6>
-
-<div id="rating-stars" class="stars">
-    <span class="star" data-value="1">&#9733;</span>
-    <span class="star" data-value="2">&#9733;</span>
-    <span class="star" data-value="3">&#9733;</span>
-    <span class="star" data-value="4">&#9733;</span>
-    <span class="star" data-value="5">&#9733;</span>
-   
-
-</div>
-
-    </div>
-
-<div class="section-title text-center">
-    <div class="section-title text-center">
-        <textarea id="feedback" placeholder="Kirjoita palautteesi tähän..." rows="2" cols="50" required ></textarea><br><br>
-        <textarea id="posti" placeholder="sähköpostisi" type="email"cols="50" required></textarea>
-    </div>
-    <button onclick="submitFeedback()">Lähetä palautetta</button>
-<script>
-function submitFeedback() {
-    const feedback = document.getElementById('feedback').value.trim();
-    const posti = document.getElementById('posti').value.trim();
-
-    if (posti === '') {
-        alert('Anna sähköpostisi');
-        return;
-    }
-    else if (rating === 0) {
-        alert('Anna arvio tähdillä!');
-        return;
-    }
-    if (feedback === '') {
-        alert('Kirjoita palautteesi!');
-        return;
-    }
-    
-    console.log('Arvio:', rating);
-    console.log('Palautteesi:', feedback);
-    
-    alert('Palautteesi on vastaanotettu. Kiitos!');
-    
-    console.log('Redirecting...');
-    redirect();
-}
-
-function redirect() {
-    console.log('Inside redirect function');
-    window.location.href = "fantasia.html";
-}
-
-</script>
-    
-</body>
+                <head>
+                    <title>Palautelomake</title>
+                    <style>
+                        .stars {
+                            display: inline-block;
+                        }
+                
+                        .star {
+                            font-size: 2rem;
+                            cursor: pointer;
+                            color: gray;
+                        }
+                
+                        .star:hover,
+                        .star.active {
+                            color: gold;
+                        }
+                    </style>
+                </head>
+                <body>
+                    <div class="section-title text-center">
+                        <h6>Anna palautetta</h6>
+                
+                        <div id="rating-stars" class="stars">
+                            <span class="star" data-value="1">&#9733;</span>
+                            <span class="star" data-value="2">&#9733;</span>
+                            <span class="star" data-value="3">&#9733;</span>
+                            <span class="star" data-value="4">&#9733;</span>
+                            <span class="star" data-value="5">&#9733;</span>
+                        </div>
+                    </div>
+                
+                    <div class="section-title text-center">
+                        <form action="fantasia.html" method="get" id="feedbackForm">
+                            <textarea id="feedback" name="feedback" placeholder="Kirjoita palautteesi tähän..." rows="2" cols="50" required></textarea><br><br>
+                            <input id="posti" name="posti" placeholder="sähköpostisi" type="email" cols="50" required><br><br>
+                            <button type="submit">Lähetä palautetta</button>
+                        </form>
+                    </div>
+                
+                    <script>
+                        let rating = 0;
+                
+                        const stars = document.querySelectorAll('.star');
+                
+                        stars.forEach(star => {
+                            star.addEventListener('click', () => {
+                                rating = parseInt(star.getAttribute('data-value'));
+                                highlightStars(rating);
+                            });
+                        });
+                
+                        function highlightStars(value) {
+                            stars.forEach(star => {
+                                if (parseInt(star.getAttribute('data-value')) <= value) {
+                                    star.classList.add('active');
+                                } else {
+                                    star.classList.remove('active');
+                                }
+                            });
+                        }
+                    </script>
+                </body>
+                
 
 	<div class="copyrights">
         <div class="container-fluid">
