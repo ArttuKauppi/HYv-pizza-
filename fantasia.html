@@ -146,8 +146,9 @@
             var hinta = laskeKokonaishinta();
             var pizzaNimi = "Fantasia Pizza";
             
-            // Lähetetään viesti index.html-sivulle
-            window.parent.postMessage({ action: 'lisaaOstoskoriin', pizzaNimi: pizzaNimi, hinta: hinta }, '*');
+            // Lisätään tiedot URL-parametreina
+            var url = "index.html?pizza=" + encodeURIComponent(pizzaNimi) + "&hinta=" + encodeURIComponent(hinta);
+            window.location.href = url;
         }
 
         function redirect() {

@@ -239,23 +239,23 @@
     </div>
 
     <script>
-        window.addEventListener('message', function(event) {
-            if (event.data.action === 'lisaaOstoskoriin') {
-                var pizzaNimi = event.data.pizzaNimi;
-                var hinta = event.data.hinta;
-                
-                var ostoskoriElementti = document.getElementById("ostoskori");
-                var yhteishintaElementti = document.getElementById("yhteishinta");
+        // Käsitellään URL-parametrit
+        var urlParams = new URLSearchParams(window.location.search);
+        var pizzaNimi = urlParams.get('pizza');
+        var hinta = parseFloat(urlParams.get('hinta'));
 
-                var listItem = document.createElement("li");
-                listItem.textContent = pizzaNimi + " - " + hinta + "€";
-                ostoskoriElementti.appendChild(listItem);
+        // Lisätään ostoskoriin ja päivitetään yhteishinta
+        if (pizzaNimi && hinta) {
+            var ostoskoriElementti = document.getElementById("ostoskori");
+            var listItem = document.createElement("li");
+            listItem.textContent = pizzaNimi + " - " + hinta + "€";
+            ostoskoriElementti.appendChild(listItem);
 
-                var yhteishinta = parseFloat(yhteishintaElementti.textContent) || 0;
-                yhteishinta += hinta;
-                yhteishintaElementti.textContent = "Yhteishinta: " + yhteishinta.toFixed(2) + "€";
-            }
-        });
+            var yhteishintaElementti = document.getElementById("yhteishinta");
+            var yhteishinta = parseFloat(yhteishintaElementti.textContent) || 0;
+            yhteishinta += hinta;
+            yhteishintaElementti.textContent = "Yhteishinta: " + yhteishinta.toFixed(2) + "€";
+        }
     </script>
 		
     
@@ -400,7 +400,6 @@
                 <img src="uploads/menu-img-06.jpg" class="img-fluid" alt="" />
             </div>
             <h2>Fantasia</h2>
-            <h1><input type="button" value="13€" onclick="lisaa_tuote('Fantasia', 13)" /> <input type="button" value="Iso +2€" onclick="lisaa_tuote('Iso Fantasia', 15)" /> </h1>
             <h1><input type="button" value="edit" onclick="redirect()" /> </h1>
             <form style="display: none; " id ="tayte8"> 
                 <div class="section-label text-center" id ="juusto">
