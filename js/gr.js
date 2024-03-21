@@ -8,7 +8,7 @@ if(localStorage.getItem("kirjautunut") === 'kylla') {
     document.getElementById("kirjautumis_lomake").style.display ="none";
     document.getElementById("menu_nappi").style.display ='block';
     document.getElementById("menu_nappi2").style.display ='block';
-    document.getElementById("about").style.display ='block';
+    document.getElementById("about_teksti").style.display ='block';
     document.getElementById().textContent += localStorage.getItem("password");
     }
 
