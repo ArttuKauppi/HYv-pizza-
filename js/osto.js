@@ -95,9 +95,6 @@ function naytaosoite() {
                 function muokkaa4() {
                     document.getElementById('tayte4').style.display = 'block';
                     }
-                    function muokkaa4() {
-                        document.getElementById('tayte4').style.display = 'block';
-                    }
                     function muokkaa5() {
                         document.getElementById('tayte5').style.display = 'block';
                         }
