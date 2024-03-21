@@ -239,43 +239,23 @@
 </div>
 
 <script>
-    // Alustetaan ostoskori
-    var ostoskori = [];
+    // Käsitellään URL-parametrit
+    var urlParams = new URLSearchParams(window.location.search);
+    var pizzaNimi = urlParams.get('pizza');
+    var hinta = parseFloat(urlParams.get('hinta'));
 
-    // Päivitetään ostoskori näytölle
-    function paivitaOstoskori() {
+    // Lisätään ostoskoriin ja päivitetään yhteishinta
+    if (pizzaNimi && hinta) {
         var ostoskoriElementti = document.getElementById("ostoskori");
-        ostoskoriElementti.innerHTML = ""; // Tyhjennetään ensin ostoskori
+        var listItem = document.createElement("li");
+        listItem.textContent = pizzaNimi + " - " + hinta + "€";
+        ostoskoriElementti.appendChild(listItem);
 
-        var yhteishinta = 0;
-
-        // Lisätään jokainen pizza ostoskoriin
-        ostoskori.forEach(function(item) {
-            var listItem = document.createElement("li");
-            listItem.textContent = item.pizzaNimi + " - " + item.hinta + "€";
-            ostoskoriElementti.appendChild(listItem);
-
-            yhteishinta += item.hinta;
-        });
-
-        // Päivitetään yhteishinta
         var yhteishintaElementti = document.getElementById("yhteishinta");
+        var yhteishinta = parseFloat(yhteishintaElementti.textContent) || 0;
+        yhteishinta += hinta;
         yhteishintaElementti.textContent = "Yhteishinta: " + yhteishinta.toFixed(2) + "€";
     }
-
-    // Käsitellään viesti fantasia.html-sivulta
-    window.addEventListener('message', function(event) {
-        if (event.data.action === 'lisaaOstoskoriin') {
-            var pizzaNimi = event.data.pizzaNimi;
-            var hinta = event.data.hinta;
-
-            // Lisätään pizza ostoskoriin
-            ostoskori.push({ pizzaNimi: pizzaNimi, hinta: hinta });
-
-            // Päivitetään ostoskori näytölle
-            paivitaOstoskori();
-        }
-    });
 </script>
     <title>Ostoskori</title>
 	
