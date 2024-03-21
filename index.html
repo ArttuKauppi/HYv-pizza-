@@ -239,9 +239,8 @@
 </div>
 
 <script>
-    // Alustetaan ostoskori paikallisen varaston avulla
-    var ostoskori = JSON.parse(localStorage.getItem('ostoskori')) || [];
-    paivitaOstoskori();
+    // Alustetaan ostoskori
+    var ostoskori = [];
 
     // Päivitetään ostoskori näytölle
     function paivitaOstoskori() {
@@ -273,9 +272,6 @@
             // Lisätään pizza ostoskoriin
             ostoskori.push({ pizzaNimi: pizzaNimi, hinta: hinta });
 
-            // Päivitetään ostoskori paikalliseen varastoon
-            localStorage.setItem('ostoskori', JSON.stringify(ostoskori));
-
             // Päivitetään ostoskori näytölle
             paivitaOstoskori();
         }
@@ -283,7 +279,6 @@
 
     // Poista ostoskori
     function tyhjennaOstoskori() {
-        localStorage.removeItem('ostoskori');
         ostoskori = [];
         paivitaOstoskori();
     }
