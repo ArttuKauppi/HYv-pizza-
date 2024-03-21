@@ -143,16 +143,9 @@
         function lisaaFantasiaOstoskoriin() {
             var hinta = laskeKokonaishinta();
             var pizzaNimi = "Fantasia Pizza";
-            var ostoskoriElementti = window.opener.document.getElementById("ostoskori");
-            var yhteishintaElementti = window.opener.document.getElementById("yhteishinta");
-
-            var listItem = document.createElement("li");
-            listItem.textContent = pizzaNimi + " - " + hinta + "€";
-            ostoskoriElementti.appendChild(listItem);
-
-            var yhteishinta = parseFloat(yhteishintaElementti.textContent) || 0;
-            yhteishinta += hinta;
-            yhteishintaElementti.textContent = "Yhteishinta: " + yhteishinta.toFixed(2) + "€";
+            
+            // Lähetetään viesti index.html-sivulle
+            window.opener.postMessage({ action: 'lisaaOstoskoriin', pizzaNimi: pizzaNimi, hinta: hinta }, '*');
         }
 
         function redirect() {
