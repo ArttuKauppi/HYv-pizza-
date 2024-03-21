@@ -585,8 +585,8 @@ e<!DOCTYPE html>
                 
                     <div class="section-title text-center">
                         <form id="feedbackForm">
-                            <textarea id="feedback" placeholder="Kirjoita palautteesi tähän..." rows="2" cols="50" required></textarea><br><br>
-                            <input id="posti" placeholder="sähköpostisi" type="email" cols="50" required><br><br>
+                            <textarea id="feedback" name="feedback" placeholder="Kirjoita palautteesi tähän..." rows="2" cols="50" required></textarea><br><br>
+                            <input id="posti" name="posti" placeholder="sähköpostisi" type="email" cols="50" required><br><br>
                             <button type="button" onclick="submitFeedback()">Lähetä palautetta</button>
                         </form>
                     </div>
@@ -623,17 +623,17 @@ e<!DOCTYPE html>
                             } else if (rating === 0) {
                                 alert('Anna arvio tähdillä!');
                                 return;
-                            }
-                            if (feedback === '') {
+                            } else if (feedback === '') {
                                 alert('Kirjoita palautteesi!');
                                 return;
                             }
                 
                             console.log('Arvio:', rating);
                             console.log('Palautteesi:', feedback);
-                            alert('Palautteesi on vastaanotettu. Kiitos!');
                 
-                            // Redirect after displaying the alert
+                            alert('Palautteesi on vastaanotettu. Kiitos!');
+                            
+                            // Manually navigate to the desired URL after feedback submission
                             window.location.href = "fantasia.html";
                         }
                     </script>
