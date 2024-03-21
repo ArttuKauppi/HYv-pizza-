@@ -595,36 +595,37 @@ e<!DOCTYPE html>
     </div>
     <button onclick="submitFeedback()">Lähetä palautetta</button>
 <script>
-    function submitFeedback() {
-        const feedback = document.getElementById('feedback').value.trim();
-        const posti = document.getElementById('posti').value.trim(); // Lisätty posti-muuttujan määrittely
-    
-        if (posti === '') { // Lisätty ehto sähköpostin pakollisuudelle
-            alert('Anna sähköpostisi');
-            return;
-        }
-        else if (rating === 0) {
-            alert('Anna arvio tähdillä!');
-            return;
-        }
-        if (feedback === '') {
-            alert('Kirjoita palautteesi!');
-            return;
-        }
-        
-        // Voit tässä vaiheessa tehdä jotain palautteella, esim. lähettää sen palvelimelle
-        console.log('Arvio:', rating);
-        console.log('Palautteesi:', feedback);
-        // Tässä voit lisätä logiikan palautteen käsittelyä varten, kuten lähettää sen palvelimelle
-        alert('Palautteesi on vastaanotettu. Kiitos!');
-        
-        // Redirect after displaying the alert
-        redirect();
+function submitFeedback() {
+    const feedback = document.getElementById('feedback').value.trim();
+    const posti = document.getElementById('posti').value.trim();
+
+    if (posti === '') {
+        alert('Anna sähköpostisi');
+        return;
+    }
+    else if (rating === 0) {
+        alert('Anna arvio tähdillä!');
+        return;
+    }
+    if (feedback === '') {
+        alert('Kirjoita palautteesi!');
+        return;
     }
     
-    function redirect() {
-        window.location.href = "fantasia.html"; // Redirects to the specified URL
-    }
+    console.log('Arvio:', rating);
+    console.log('Palautteesi:', feedback);
+    
+    alert('Palautteesi on vastaanotettu. Kiitos!');
+    
+    console.log('Redirecting...');
+    redirect();
+}
+
+function redirect() {
+    console.log('Inside redirect function');
+    window.location.href = "fantasia.html";
+}
+
 </script>
     
 </body>
