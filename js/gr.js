@@ -1,60 +1,113 @@
-document.addEventListener("DOMContentLoaded",onkoKirjaunut);
-function onkoKirjaunut(){
-    let kirjautunut ='kylla';
-if(localStorage.getItem("kirjautunut") === 'kylla') {
+var ostoskori = []; // Alusta tyhjä ostoskori
 
-    document.getElementById('tervetulo_teksti').textContent += localStorage.getItem("nimi");
-    document.getElementById("rekisteroitymislomake_nappi").style.display ="none";
-    document.getElementById("kirjautumis_lomake").style.display ="none";
-    document.getElementById("menu_nappi").style.display ='block';
-    document.getElementById("menu_nappi2").style.display ='block';
-    document.getElementById("about_teksti").style.display ='block';
-    document.getElementById().textContent += localStorage.getItem("password");
+// Lisää tuote ostoskoriin
+function lisaa_tuote(nimi, hinta) {
+    ostoskori.push({ nimi: nimi, hinta: hinta });
+    paivitaOstoskori(); // Päivitä ostoskorin näyttö
+}
+
+// Poista tuote ostoskorista
+function poista_tuote(index) {
+    ostoskori.splice(index, 1);
+    paivitaOstoskori(); // Päivitä ostoskorin näyttö
+}
+
+// Laske ostoskorin yhteishinta
+function laskeYhteishinta() {
+    var yhteishinta = 0;
+    for (var i = 0; i < ostoskori.length; i++) {
+        yhteishinta += ostoskori[i].hinta;
+    }
+    return yhteishinta;
+}
+
+function tieto(){
+
+    var osoite = document.getElementById("osoite").value;
+    var talo = document.getElementById("talo").value;
+    var talonNumero = document.getElementById("talonNumero").value;
+    var ovikoodi = document.getElementById("ovikoodi").value;
+    
+
+}
+// Tilausprosessi
+function tila() {
+    var yhteishinta = laskeYhteishinta();
+    if (ostoskori.length > 0) { // Tarkista, että ostoskorissa on tuotteita ennen tilauksen tekemistä
+        
+        alert("Tilaus tehty! Yhteishinta: " + yhteishinta + "€");
+        // Tyhjennä ostoskori tilauksen jälkeen
+        ostoskori = [];
+        paivitaOstoskori(); // Päivitä ostoskorin näyttö
+    } else {
+        alert("Ostoskorisi on tyhjä. Valitse ensin tuotteita.");
+    }
+   
+
+}
+
+
+
+// Päivitä ostoskorin näyttö
+function paivitaOstoskori() {   
+    var ostoskoriElementti = document.getElementById("ostoskori");
+    var yhteishintaElementti = document.getElementById("yhteishinta");
+    var yhteishinta = laskeYhteishinta();
+
+    ostoskoriElementti.innerHTML = ""; // Tyhjennä ostoskorin näyttö
+
+    // Lisää jokainen tuote ostoskorista näyttöön ja lisää poistopainike
+    for (var i = 0; i < ostoskori.length; i++) {
+        var tuote = ostoskori[i];
+        var tuoteElementti = document.createElement("li");
+        tuoteElementti.textContent = tuote.nimi + " - " + tuote.hinta + "€ ";
+        var poistaPainike = document.createElement("button");
+        poistaPainike.textContent = "Poista";
+        // Lisää tapahtumankäsittelijä poistopainikkeelle
+        poistaPainike.addEventListener("click", (function(index) {
+            return function() {
+                poista_tuote(index);
+            };
+        })(i));
+        tuoteElementti.appendChild(poistaPainike);
+        ostoskoriElementti.appendChild(tuoteElementti);
     }
 
-            
+    // Päivitä yhteishinnan näyttö
+    yhteishintaElementti.textContent = "Yhteishinta: " + yhteishinta + "€";
 }
-function kirjaudu() {
+
+// Lisää monta tuotetta kerralla
+
+function naytaosoite() {
+    document.getElementById('osoite').style.display = 'block';
+    document.getElementById('nappi').style.display = 'none';
+    }
+    function muokkaa() {
+        document.getElementById('tayte').style.display = 'block';
+        }
+        function muokkaa2() {
+            document.getElementById('tayte2').style.display = 'block';
+            }
+            function muokkaa3() {
+                document.getElementById('tayte3').style.display = 'block';
+                }
+                function muokkaa4() {
+                    document.getElementById('tayte4').style.display = 'block';
+                    }
+                    function muokkaa5() {
+                        document.getElementById('tayte5').style.display = 'block';
+                        }
+                        function muokkaa6() {
+                            document.getElementById('tayte6').style.display = 'block';
+                            }
+                            function muokaa7() {
+                                document.getElementById('tayte7').style.display = 'block';
+                                }
+                                  
+                            function fantasia() {
+                                document.getElementById('fantasia').style.display = 'block';
+                                }
+                                    
+                
     
-    localStorage.setItem("nimi",document.getElementById("nimi").value);
-    localStorage.setItem("kirjautunut","kylla");
-    localStorage.setItem("salasana",document.getElementById("salasana").value);
-}
-
-if (kirjautunut) {
-    kirjauduUlosNappi.style.display = 'block';
-} else {
-    kirjauduUlosNappi.style.display = 'none';
-}
-if (kirjautunut) {
-    menu_nappi.style.display = 'block';
-} else {
-    menu_nappi.style.display = 'none';
-}
-if(localStorage) {
-
-    kirjautumis_lomake.style.display ='block';
-} else {
-    kirjautumis_lomake.style.display ='none'; 
-}
-if (kirjautunut) {
-    rekisteroitymislomake_nappi.style.display = 'block';
-} else {
-    rekisteroitymislomake_nappi.style.display = 'none';
-}
-if (kirjautunut) {
-    menu_nappi2.style.display = 'block';
-} else {
-    menu_nappi2.style.display = 'none';
-}
-
-function kirjauduUlos() {
-    localStorage.clear();
-    tarkistaKirjautuminen(); 
-}
-
-
-
-document.addEventListener('DOMContentLoaded', function () {
-tarkistaKirjautuminen();
-});
