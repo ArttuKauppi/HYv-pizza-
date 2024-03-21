@@ -143,19 +143,10 @@
         }
 
         function lisaaFantasiaOstoskoriin() {
-            // Haetaan ostoskori ja yhteishinta elementit pääsivulta
-            var ostoskoriElementti = window.opener.document.getElementById("ostoskori");
-            var yhteishintaElementti = window.opener.document.getElementById("yhteishinta");
-
-            // Luodaan uusi listaelementti ja lisätään se ostoskoriin
-            var listItem = document.createElement("li");
-            listItem.textContent = "Fantasia Pizza - " + laskeKokonaishinta() + "€"; // Lisätään myös hinta
-            ostoskoriElementti.appendChild(listItem);
-
-            // Lisätään Fantasia Pizzan hinta yhteishintaan
-            var yhteishinta = parseFloat(yhteishintaElementti.textContent) || 0;
-            yhteishinta += laskeKokonaishinta();
-            yhteishintaElementti.textContent = "Yhteishinta: " + yhteishinta.toFixed(2) + "€";
+            var hinta = laskeKokonaishinta();
+            var pizzaNimi = "Fantasia Pizza";
+            var url = "index.html?pizza=" + encodeURIComponent(pizzaNimi) + "&hinta=" + encodeURIComponent(hinta);
+            window.location.href = url;
         }
 
         function redirect() {
@@ -164,4 +155,3 @@
     </script>
 </body>
 </html>
-
