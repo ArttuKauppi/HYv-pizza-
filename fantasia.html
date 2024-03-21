@@ -110,6 +110,8 @@
                 <input type="checkbox" id="gluteeniton">Gluteeniton pohja (2€)</input> 
 
             </div> 
+
+ 
             <!-- Muut täytteet jätetty alkuperäisiksi -->
             <button onclick="lisaaFantasiaOstoskoriin()">Lisää ostoskoriin</button>
             <div id="hinta"></div> <!-- Näytetään hinta tässä -->
@@ -145,7 +147,7 @@
             var pizzaNimi = "Fantasia Pizza";
             
             // Lähetetään viesti index.html-sivulle
-            window.opener.postMessage({ action: 'lisaaOstoskoriin', pizzaNimi: pizzaNimi, hinta: hinta }, '*');
+            window.parent.postMessage({ action: 'lisaaOstoskoriin', pizzaNimi: pizzaNimi, hinta: hinta }, '*');
         }
 
         function redirect() {

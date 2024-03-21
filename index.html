@@ -229,15 +229,34 @@
 	
     <div id="menu" class="section lb">
         <div class="container-fluid">
-			<div class="section-title text-center">
-				<h3>Menu</h3>
-				<h2>Ostoskori </h2>
-<ul id="ostoskori"></ul>
+            <div class="section-title text-center">
+                <h3>Menu</h3>
+                <h2>Ostoskori</h2>
+                <ul id="ostoskori"></ul>
+                <div id="yhteishinta"></div>
+            </div>
+        </div>
+    </div>
 
-<!-- Yhteishinta -->
-<div id="yhteishinta"></div>
+    <script>
+        window.addEventListener('message', function(event) {
+            if (event.data.action === 'lisaaOstoskoriin') {
+                var pizzaNimi = event.data.pizzaNimi;
+                var hinta = event.data.hinta;
+                
+                var ostoskoriElementti = document.getElementById("ostoskori");
+                var yhteishintaElementti = document.getElementById("yhteishinta");
 
-			</div>
+                var listItem = document.createElement("li");
+                listItem.textContent = pizzaNimi + " - " + hinta + "€";
+                ostoskoriElementti.appendChild(listItem);
+
+                var yhteishinta = parseFloat(yhteishintaElementti.textContent) || 0;
+                yhteishinta += hinta;
+                yhteishintaElementti.textContent = "Yhteishinta: " + yhteishinta.toFixed(2) + "€";
+            }
+        });
+    </script>
 		
     
     <title>Ostoskori</title>
