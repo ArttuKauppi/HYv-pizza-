@@ -196,7 +196,7 @@
                            
                         
                                 
-    <div   id="about_teksti" class="section lb">
+    <div id="about" class="section lb">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-6">
@@ -227,7 +227,7 @@
 	
 	
 	
-    <div id="menu_nappi2" style="display:none; class="section lb">
+    <div id="menu" class="section lb">
         <div class="container-fluid">
 			<div class="section-title text-center">
 				<h3>Menu</h3>
@@ -525,53 +525,98 @@
     <!-- Lisää muita pizza-elementtejä samalla tavalla -->
 </div><!-- end row -->
 
-<!-- Lisätty juomalistat -->
-<select id="drink1" name="drink1">
-    <option value="0">Valitse juoma</option>
-    <option value="2">Vesi</option>
-    <option value="3">Virvoitusjuoma</option>
-    <!-- Lisää muita juomavaihtoehtoja tarvittaessa -->
-</select>
+<!-- Lisätään juomien esittelyä varten oma osio -->
+<div class="row">
+    <div class="col-md-3">
+        <div class="services-inner-box">
+            <div class="ser-icon">
+                <img src="path/to/drink-image.jpg" class="img-fluid" alt="Drink Image" />
+            </div>
+            <h2>coca cola</h2>
+            <h1><input type="button" value="3€" onclick="lisaa_juoma('coca cola', 3)" /></h1>
+            <h1><input type="button" value="edit" onclick="muokkaa_juoma()" /> </h1>
+            <form style="display: none; " id="juoma_tayte"> 
+                <!-- Lisää mahdollisia lisäominaisuuksia juomille -->
+                <div class="section-label text-center" id="jaahtynyt">
+                    <input type="checkbox" value="1€"> Jäitä</input>
+                </div>
+            </form>
+        </div>
+    </div>
 
-<select id="drink2" name="drink2">
-    <option value="0">Valitse juoma</option>
-    <option value="2">Vesi</option>
-    <option value="3">Virvoitusjuoma</option>
-    <!-- Lisää muita juomavaihtoehtoja tarvittaessa -->
-</select>
+    <div class="row">
+        <div class="col-md-3">
+            <div class="services-inner-box">
+                <div class="ser-icon">
+                    <img src="path/to/drink-image.jpg" class="img-fluid" alt="Drink Image" />
+                </div>
+                <h2>Fanta</h2>
+                <h1><input type="button" value="3€" onclick="lisaa_juoma('Fanta', 3)" /></h1>
+                <h1><input type="button" value="edit" onclick="muokkaa_juoma()" /> </h1>
+                <form style="display: none; " id="juoma_tayte"> 
+                    <!-- Lisää mahdollisia lisäominaisuuksia juomille -->
+                    <div class="section-label text-center" id="jaahtynyt">
+                        <input type="checkbox" value="1€"> Jäitä</input>
+                    </div>
+                </form>
+            </div>
+        </div>
 
-<!-- Tilauksen lähettämisen painike -->
-<button onclick="submitOrder()">Tilaa</button>
-<script>
+        <div class="row">
+            <div class="col-md-3">
+                <div class="services-inner-box">
+                    <div class="ser-icon">
+                        <img src="path/to/drink-image.jpg" class="img-fluid" alt="Drink Image" />
+                    </div>
+                    <h2>sprite</h2>
+                    <h1><input type="button" value="3€" onclick="lisaa_juoma('sprite', 3)" /></h1>
+                    <h1><input type="button" value="edit" onclick="muokkaa_juoma()" /> </h1>
+                    <form style="display: none; " id="juoma_tayte"> 
+                        <!-- Lisää mahdollisia lisäominaisuuksia juomille -->
+                        <div class="section-label text-center" id="jaahtynyt">
+                            <input type="checkbox" value="1€"> Jäitä</input>
+                        </div>
+                    </form>
+                </div>
+            </div>
 
-// Lisätty JavaScript-koodi juomien käsittelyä ja tilauksen lähettämistä varten
-function submitOrder() {
-    var drink1 = document.getElementById('drink1').value;
-    var drink2 = document.getElementById('drink2').value;
-    
-    var totalCost = calculateTotalCost(drink1, drink2);
-    
-    // Voit tässä vaiheessa lähettää tilauksen palvelimelle tai muualle tarpeesi mukaan
-    console.log('Juomat:', drink1, drink2);
-    console.log('Kokonaishinta:', totalCost);
-    alert('Tilaus on vastaanotettu. Kiitos!');
-}
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="services-inner-box">
+                        <div class="ser-icon">
+                            <img src="path/to/drink-image.jpg" class="img-fluid" alt="Drink Image" />
+                        </div>
+                        <h2>jää tee</h2>
+                        <h1><input type="button" value="3€" onclick="lisaa_juoma('jää tee', 3)" /></h1>
+                        <h1><input type="button" value="edit" onclick="muokkaa_juoma()" /> </h1>
+                        <form style="display: none; " id="juoma_tayte"> 
+                            <!-- Lisää mahdollisia lisäominaisuuksia juomille -->
+                            <div class="section-label text-center" id="jaahtynyt">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="services-inner-box">
+                            <div class="ser-icon">
+                                <img src="path/to/drink-image.jpg" class="img-fluid" alt="Drink Image" />
+                            </div>
+                            <h2>vesi</h2>
+                            <h1><input type="button" value="3€" onclick="lisaa_juoma('Vesi', 3)" /></h1>
+                            <h1><input type="button" value="edit" onclick="muokkaa_juoma()" /> </h1>
+                            <form style="display: none; " id="juoma_tayte"> 
+                                <!-- Lisää mahdollisia lisäominaisuuksia juomille -->
+                                <div class="section-label text-center" id="jaahtynyt">
+                                    <input type="checkbox" value="1€"> Jäitä</input>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    
+    <!-- Lisää muita juomia samalla tavalla -->
+</div>
 
-function calculateTotalCost(drink1, drink2) {
-    // Laske juomien yhteishinta
-    var cost = 0;
-    
-    if (drink1 != "0") {
-        cost += parseInt(drink1);
-    }
-    
-    if (drink2 != "0") {
-        cost += parseInt(drink2);
-    }
-    
-    return cost;
-}
-</script>
 
 <html>
 	<div id="gallery" class="section wb">
