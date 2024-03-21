@@ -525,6 +525,53 @@
     <!-- Lisää muita pizza-elementtejä samalla tavalla -->
 </div><!-- end row -->
 
+<!-- Lisätty juomalistat -->
+<select id="drink1" name="drink1">
+    <option value="0">Valitse juoma</option>
+    <option value="2">Vesi</option>
+    <option value="3">Virvoitusjuoma</option>
+    <!-- Lisää muita juomavaihtoehtoja tarvittaessa -->
+</select>
+
+<select id="drink2" name="drink2">
+    <option value="0">Valitse juoma</option>
+    <option value="2">Vesi</option>
+    <option value="3">Virvoitusjuoma</option>
+    <!-- Lisää muita juomavaihtoehtoja tarvittaessa -->
+</select>
+
+<!-- Tilauksen lähettämisen painike -->
+<button onclick="submitOrder()">Tilaa</button>
+<script>
+
+// Lisätty JavaScript-koodi juomien käsittelyä ja tilauksen lähettämistä varten
+function submitOrder() {
+    var drink1 = document.getElementById('drink1').value;
+    var drink2 = document.getElementById('drink2').value;
+    
+    var totalCost = calculateTotalCost(drink1, drink2);
+    
+    // Voit tässä vaiheessa lähettää tilauksen palvelimelle tai muualle tarpeesi mukaan
+    console.log('Juomat:', drink1, drink2);
+    console.log('Kokonaishinta:', totalCost);
+    alert('Tilaus on vastaanotettu. Kiitos!');
+}
+
+function calculateTotalCost(drink1, drink2) {
+    // Laske juomien yhteishinta
+    var cost = 0;
+    
+    if (drink1 != "0") {
+        cost += parseInt(drink1);
+    }
+    
+    if (drink2 != "0") {
+        cost += parseInt(drink2);
+    }
+    
+    return cost;
+}
+</script>
 
 <html>
 	<div id="gallery" class="section wb">
