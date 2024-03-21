@@ -7,6 +7,8 @@ if(localStorage.getItem("kirjautunut") === 'kylla') {
     document.getElementById("rekisteroitymislomake_nappi").style.display ="none";
     document.getElementById("kirjautumis_lomake").style.display ="none";
     document.getElementById("menu_nappi").style.display ='block';
+    document.getElementById("menu_nappi2").style.display ='block';
+    document.getElementById("about").style.display ='block';
     document.getElementById().textContent += localStorage.getItem("password");
     }
 
@@ -40,11 +42,16 @@ if (kirjautunut) {
 } else {
     rekisteroitymislomake_nappi.style.display = 'none';
 }
+if (kirjautunut) {
+    menu_nappi2.style.display = 'block';
+} else {
+    menu_nappi2.style.display = 'none';
+}
+
 function kirjauduUlos() {
     localStorage.clear();
     tarkistaKirjautuminen(); 
 }
-
 
 
 
