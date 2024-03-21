@@ -263,7 +263,7 @@
         yhteishintaElementti.textContent = "Yhteishinta: " + yhteishinta.toFixed(2) + "€";
     }
 
-    // Lisää pizza ostoskoriin
+    // Käsitellään viesti fantasia.html-sivulta
     window.addEventListener('message', function(event) {
         if (event.data.action === 'lisaaOstoskoriin') {
             var pizzaNimi = event.data.pizzaNimi;
@@ -276,17 +276,7 @@
             paivitaOstoskori();
         }
     });
-
-    // Poista ostoskori
-    function tyhjennaOstoskori() {
-        var ostoskoriElementti = document.getElementById("ostoskori");
-        ostoskoriElementti.innerHTML = "";
-        var yhteishintaElementti = document.getElementById("yhteishinta");
-        yhteishintaElementti.textContent = "Yhteishinta: 0.00€";
-        ostoskori = [];
-    }
 </script>
-    
     <title>Ostoskori</title>
 	
     <script type="text/javascript" language="javascript" src="js\osto.js"></script>

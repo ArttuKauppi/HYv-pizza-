@@ -113,7 +113,7 @@
 
  
             <!-- Muut täytteet jätetty alkuperäisiksi -->
-            <button onclick="lisaaFantasiaOstoskoriin()">Lisää ostoskoriin</button>
+            <button onclick="laskeKokonaishinta()">Tilaa</button>
             <div id="hinta"></div> <!-- Näytetään hinta tässä -->
             <div class="section-label text-center">
                 <button onclick="redirect()">Palaa pääsivulle</button>
@@ -139,16 +139,8 @@
                 kokonaishinta += 2;
             }
 
-            return kokonaishinta;
-        }
-
-        function lisaaFantasiaOstoskoriin() {
-            var hinta = laskeKokonaishinta();
-            var pizzaNimi = "Fantasia Pizza";
-            
-            // Lisätään tiedot URL-parametreina
-            var url = "index.html?pizza=" + encodeURIComponent(pizzaNimi) + "&hinta=" + encodeURIComponent(hinta);
-            window.location.href = url;
+            // Lähetetään tiedot index.html-sivulle
+            window.parent.postMessage({ action: 'lisaaOstoskoriin', pizzaNimi: 'Fantasia', hinta: kokonaishinta }, '*');
         }
 
         function redirect() {
