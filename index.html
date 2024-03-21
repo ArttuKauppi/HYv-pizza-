@@ -551,94 +551,66 @@ e<!DOCTYPE html>
                 <div class="section-label text-center" id> 
 
                 </div>
-                <head>
-                    <title>Palautelomake</title>
-                    <style>
-                        .stars {
-                            display: inline-block;
-                        }
-                
-                        .star {
-                            font-size: 2rem;
-                            cursor: pointer;
-                            color: gray;
-                        }
-                
-                        .star:hover,
-                        .star.active {
-                            color: gold;
-                        }
-                    </style>
-                </head>
-                <body>
-                    <div class="section-title text-center">
-                        <h6>Anna palautetta</h6>
-                
-                        <div id="rating-stars" class="stars">
-                            <span class="star" data-value="1">&#9733;</span>
-                            <span class="star" data-value="2">&#9733;</span>
-                            <span class="star" data-value="3">&#9733;</span>
-                            <span class="star" data-value="4">&#9733;</span>
-                            <span class="star" data-value="5">&#9733;</span>
-                        </div>
+                <style>
+                    .stars {
+                        display: inline-block;
+                    }
+            
+                    .star {
+                        font-size: 2rem;
+                        cursor: pointer;
+                        color: gray;
+                    }
+            
+                    .star:hover,
+                    .star.active {
+                        color: gold;
+                    }
+                </style>
+            </head>
+            <body>
+                <div class="section-title text-center">
+                    <h6>Anna palautetta</h6>
+            
+                    <div id="rating-stars" class="stars">
+                        <span class="star" data-value="1">&#9733;</span>
+                        <span class="star" data-value="2">&#9733;</span>
+                        <span class="star" data-value="3">&#9733;</span>
+                        <span class="star" data-value="4">&#9733;</span>
+                        <span class="star" data-value="5">&#9733;</span>
                     </div>
-                
-                    <div class="section-title text-center">
-                        <form id="feedbackForm">
-                            <textarea id="feedback" name="feedback" placeholder="Kirjoita palautteesi tähän..." rows="2" cols="50" required></textarea><br><br>
-                            <input id="posti" name="posti" placeholder="sähköpostisi" type="email" cols="50" required><br><br>
-                            <button type="button" onclick="submitFeedback()">Lähetä palautetta</button>
-                        </form>
-                    </div>
-                
-                    <script>
-                        let rating = 0;
-                
-                        const stars = document.querySelectorAll('.star');
-                
-                        stars.forEach(star => {
-                            star.addEventListener('click', () => {
-                                rating = parseInt(star.getAttribute('data-value'));
-                                highlightStars(rating);
-                            });
+                </div>
+            
+                <div class="section-title text-center">
+                    <form action="fantasia.html" method="get" id="feedbackForm">
+                        <textarea id="feedback" name="feedback" placeholder="Kirjoita palautteesi tähän..." rows="2" cols="50" required></textarea><br><br>
+                        <input id="posti" name="posti" placeholder="Sähköpostisi" type="email" required><br><br>
+                        <button type="submit">Lähetä palautetta</button>
+                    </form>
+                </div>
+            
+                <script>
+                    let rating = 0;
+                    const stars = document.querySelectorAll('.star');
+            
+                    stars.forEach(star => {
+                        star.addEventListener('click', () => {
+                            rating = parseInt(star.getAttribute('data-value'));
+                            highlightStars(rating);
                         });
-                
-                        function highlightStars(value) {
-                            stars.forEach(star => {
-                                if (parseInt(star.getAttribute('data-value')) <= value) {
-                                    star.classList.add('active');
-                                } else {
-                                    star.classList.remove('active');
-                                }
-                            });
-                        }
-                
-                        function submitFeedback() {
-                            const feedback = document.getElementById('feedback').value.trim();
-                            const posti = document.getElementById('posti').value.trim();
-                
-                            if (posti === '') {
-                                alert('Anna sähköpostisi');
-                                return;
-                            } else if (rating === 0) {
-                                alert('Anna arvio tähdillä!');
-                                return;
-                            } else if (feedback === '') {
-                                alert('Kirjoita palautteesi!');
-                                return;
+                    });
+            
+                    function highlightStars(value) {
+                        stars.forEach(star => {
+                            if (parseInt(star.getAttribute('data-value')) <= value) {
+                                star.classList.add('active');
+                            } else {
+                                star.classList.remove('active');
                             }
-                
-                            console.log('Arvio:', rating);
-                            console.log('Palautteesi:', feedback);
-                
-                            alert('Palautteesi on vastaanotettu. Kiitos!');
-                            
-                            // Manually navigate to the desired URL after feedback submission
-                            window.location.href = "fantasia.html";
-                        }
-                    </script>
-                </body>
-                          
+                        });
+                    }
+                </script>
+            </body>          
 
 	<div class="copyrights">
         <div class="container-fluid">
