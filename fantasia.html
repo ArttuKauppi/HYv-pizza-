@@ -110,8 +110,6 @@
                 <input type="checkbox" id="gluteeniton">Gluteeniton pohja (2€)</input> 
 
             </div> 
-
- 
             <!-- Muut täytteet jätetty alkuperäisiksi -->
             <button onclick="lisaaFantasiaOstoskoriin()">Lisää ostoskoriin</button>
             <div id="hinta"></div> <!-- Näytetään hinta tässä -->
@@ -145,8 +143,16 @@
         function lisaaFantasiaOstoskoriin() {
             var hinta = laskeKokonaishinta();
             var pizzaNimi = "Fantasia Pizza";
-            var url = "index.html?pizza=" + encodeURIComponent(pizzaNimi) + "&hinta=" + encodeURIComponent(hinta);
-            window.location.href = url;
+            var ostoskoriElementti = window.opener.document.getElementById("ostoskori");
+            var yhteishintaElementti = window.opener.document.getElementById("yhteishinta");
+
+            var listItem = document.createElement("li");
+            listItem.textContent = pizzaNimi + " - " + hinta + "€";
+            ostoskoriElementti.appendChild(listItem);
+
+            var yhteishinta = parseFloat(yhteishintaElementti.textContent) || 0;
+            yhteishinta += hinta;
+            yhteishintaElementti.textContent = "Yhteishinta: " + yhteishinta.toFixed(2) + "€";
         }
 
         function redirect() {
