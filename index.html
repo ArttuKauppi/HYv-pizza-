@@ -549,7 +549,7 @@ e<!DOCTYPE html>
                     <input type="checkbox" value="1€" > Extra pepperoni</input>
                 </div>
                 <div class="section-label text-center" id> 
-                    
+
                 </div>
 	 
 
@@ -562,95 +562,80 @@ e<!DOCTYPE html>
 
 
 			
-<div class="line">
-    <div class="col-md-3">
-        <div class="services-inner-box">
-            <div class="ser-icon">
-                <img src="path/to/drink-image.jpg" class="img-fluid" alt="Drink Image" />
-            </div>
-            <h2>coca cola</h2>
-            <h1><input type="button" value="3€" onclick="lisaa_juoma('coca cola', 3)" /></h1>
-            <h1><input type="button" value="edit" onclick="muokkaa_juoma()" /> </h1>
-            <form style="display: none; " id="juoma_tayte"> 
-                <!-- Lisää mahdollisia lisäominaisuuksia juomille -->
-                <div class="section-label text-center" id="jaahtynyt">
-                    <input type="checkbox" value="1€"> Jäitä</input>
-                </div>
-            </form>
-        </div>
-    </div>
-
-    <div class="line">
-        <div class="col-md-3">
-            <div class="services-inner-box">
-                <div class="ser-icon">
-                    <img src="path/to/drink-image.jpg" class="img-fluid" alt="Drink Image" />
-                </div>
-                <h2>Fanta</h2>
-                <h1><input type="button" value="3€" onclick="lisaa_juoma('Fanta', 3)" /></h1>
-                <h1><input type="button" value="edit" onclick="muokkaa_juoma()" /> </h1>
-                <form style="display: none; " id="juoma_tayte"> 
-                    <!-- Lisää mahdollisia lisäominaisuuksia juomille -->
-                    <div class="section-label text-center" id="jaahtynyt">
-                        <input type="checkbox" value="1€"> Jäitä</input>
-                    </div>
-                </form>
-            </div>
-        </div>
-
-        <div class="line">
-            <div class="col-md-3">
-                <div class="services-inner-box">
-                    <div class="ser-icon">
-                        <img src="path/to/drink-image.jpg" class="img-fluid" alt="Drink Image" />
-                    </div>
-                    <h2>sprite</h2>
-                    <h1><input type="button" value="3€" onclick="lisaa_juoma('sprite', 3)" /></h1>
-                    <h1><input type="button" value="edit" onclick="muokkaa_juoma()" /> </h1>
-                    <form style="display: none; " id="juoma_tayte"> 
-                        <!-- Lisää mahdollisia lisäominaisuuksia juomille -->
-                        <div class="section-label text-center" id="jaahtynyt">
-                            <input type="checkbox" value="1€"> Jäitä</input>
-                        </div>
-                    </form>
-                </div>
-            </div>
-
-            <div class="line">
-                <div class="col-md-3">
-                    <div class="services-inner-box">
-                        <div class="ser-icon">
-                            <img src="path/to/drink-image.jpg" class="img-fluid" alt="Drink Image" />
-                        </div>
-                        <h2>jää tee</h2>
-                        <h1><input type="button" value="3€" onclick="lisaa_juoma('jää tee', 3)" /></h1>
-                        <h1><input type="button" value="edit" onclick="muokkaa_juoma()" /> </h1>
-                        <form style="display: none; " id="juoma_tayte"> 
-                            <!-- Lisää mahdollisia lisäominaisuuksia juomille -->
-                            <div class="section-label text-center" id="jaahtynyt">
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="services-inner-box">
+                            <div class="ser-icon">
+                                <img src="path/to/drink-image.jpg" class="img-fluid" alt="Drink Image" />
                             </div>
-                        </form>
+                            <h2>coca cola</h2>
+                            <div class="price">3€</div>
+                            <button onclick="lisaa_juoma('coca cola', 3)">Add</button>
+                                </div>
+                            </form>
+                        </div>
                     </div>
+                </div>
 
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="services-inner-box">
+                            <div class="ser-icon">
+                                <img src="path/to/drink-image.jpg" class="img-fluid" alt="Drink Image" />
+                            </div>
+                            <h2>fanta</h2>
+                            <div class="price">3€</div>
+                            <button onclick="lisaa_juoma('fanta', 3)">Add</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="services-inner-box">
+                            <div class="ser-icon">
+                                <img src="path/to/drink-image.jpg" class="img-fluid" alt="Drink Image" />
+                            </div>
+                            <h2>sprite</h2>
+                            <div class="price">3€</div>
+                            <button onclick="lisaa_juoma('sprite', 3)">Add</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="services-inner-box">
+                            <div class="ser-icon">
+                                <img src="path/to/drink-image.jpg" class="img-fluid" alt="Drink Image" />
+                            </div>
+                            <h2>jää tee</h2>
+                            <div class="price">2€</div>
+                            <button onclick="lisaa_juoma('jää tee', 2)">Add</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
                 </div>
                 
-                <div class="line">
+                <div class="row">
                     <div class="col-md-3">
                         <div class="services-inner-box">
                             <div class="ser-icon">
                                 <img src="path/to/drink-image.jpg" class="img-fluid" alt="Drink Image" />
                             </div>
                             <h2>vesi</h2>
-                            <h1><input type="button" value="3€" onclick="lisaa_juoma('Vesi', 3)" /></h1>
-                            <h1><input type="button" value="edit" onclick="muokkaa_juoma()" /> </h1>
-                            <form style="display: none; " id="juoma_tayte"> 
-                                <!-- Lisää mahdollisia lisäominaisuuksia juomille -->
-                                <div class="section-label text-center" id="jaahtynyt">
-                                    <input type="checkbox" value="1€"> Jäitä</input>
+                            <div class="price">0€</div>
+                            <button onclick="lisaa_juoma('vesi', 0)">Add</button>
                                 </div>
                             </form>
                         </div>
                     </div>
+                </div>
 
     <!-- Lisää muita juomia samalla tavalla -->
 </div>
