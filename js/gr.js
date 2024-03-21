@@ -104,7 +104,9 @@ function naytaosoite() {
                             function muokaa7() {
                                 document.getElementById('tayte7').style.display = 'block';
                                 }
-                                  
+                                   function muokkaa9() {
+                                      document.getElementById('tayte9').style.display = 'block';
+                                      }
                             function fantasia() {
                                 document.getElementById('fantasia').style.display = 'block';
                                 }
