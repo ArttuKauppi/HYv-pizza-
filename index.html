@@ -279,8 +279,11 @@
 
     // Poista ostoskori
     function tyhjennaOstoskori() {
+        var ostoskoriElementti = document.getElementById("ostoskori");
+        ostoskoriElementti.innerHTML = "";
+        var yhteishintaElementti = document.getElementById("yhteishinta");
+        yhteishintaElementti.textContent = "Yhteishinta: 0.00€";
         ostoskori = [];
-        paivitaOstoskori();
     }
 </script>
     
