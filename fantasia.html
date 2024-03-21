@@ -89,6 +89,27 @@
         </div>
     </div>
     <script>
+        function laskeKokonaishinta() {
+            var kokonaishinta = 13; // Perushinta 10€
+            var valitutTaytteet = 0;
+
+            var taytteet = ["juusto", "jalapeno", "pekoni", "pepperoni", "kinkku", "ananas", "tomaatti", "makkara", "kana", "jauheliha", "oliivi"];
+            taytteet.forEach(function(tayte) {
+                if (document.getElementById(tayte).checked) {
+                    valitutTaytteet++;
+                    if (valitutTaytteet > 5) { // Jos valittuja täytteitä yli 5, lisätään hintaan 1€ per täyte
+                        kokonaishinta += 1;
+                    }
+                }
+            });
+
+            if (document.getElementById("gluteeniton").checked) {
+                kokonaishinta += 2;
+            }
+
+            return kokonaishinta;
+        }
+
         function lisaaFantasiaOstoskoriin() {
             // Haetaan ostoskori ja yhteishinta elementit pääsivulta
             var ostoskoriElementti = window.opener.document.getElementById("ostoskori");
@@ -96,13 +117,12 @@
 
             // Luodaan uusi listaelementti ja lisätään se ostoskoriin
             var listItem = document.createElement("li");
-            listItem.textContent = "Fantasia Pizza";
+            listItem.textContent = "Fantasia Pizza - " + laskeKokonaishinta() + "€"; // Lisätään myös hinta
             ostoskoriElementti.appendChild(listItem);
 
             // Lisätään Fantasia Pizzan hinta yhteishintaan
-            var hinta = 13; // Perushinta 10€
             var yhteishinta = parseFloat(yhteishintaElementti.textContent) || 0;
-            yhteishinta += hinta;
+            yhteishinta += laskeKokonaishinta();
             yhteishintaElementti.textContent = "Yhteishinta: " + yhteishinta.toFixed(2) + "€";
         }
 
