@@ -551,7 +551,6 @@ e<!DOCTYPE html>
                 <div class="section-label text-center" id> 
 
                 </div>
-	 
                 <head>
                     <title>Palautelomake</title>
                     <style>
@@ -585,10 +584,10 @@ e<!DOCTYPE html>
                     </div>
                 
                     <div class="section-title text-center">
-                        <form action="fantasia.html" method="get" id="feedbackForm">
-                            <textarea id="feedback" name="feedback" placeholder="Kirjoita palautteesi tähän..." rows="2" cols="50" required></textarea><br><br>
-                            <input id="posti" name="posti" placeholder="sähköpostisi" type="email" cols="50" required><br><br>
-                            <button type="submit">Lähetä palautetta</button>
+                        <form id="feedbackForm">
+                            <textarea id="feedback" placeholder="Kirjoita palautteesi tähän..." rows="2" cols="50" required></textarea><br><br>
+                            <input id="posti" placeholder="sähköpostisi" type="email" cols="50" required><br><br>
+                            <button type="button" onclick="submitFeedback()">Lähetä palautetta</button>
                         </form>
                     </div>
                 
@@ -613,9 +612,33 @@ e<!DOCTYPE html>
                                 }
                             });
                         }
+                
+                        function submitFeedback() {
+                            const feedback = document.getElementById('feedback').value.trim();
+                            const posti = document.getElementById('posti').value.trim();
+                
+                            if (posti === '') {
+                                alert('Anna sähköpostisi');
+                                return;
+                            } else if (rating === 0) {
+                                alert('Anna arvio tähdillä!');
+                                return;
+                            }
+                            if (feedback === '') {
+                                alert('Kirjoita palautteesi!');
+                                return;
+                            }
+                
+                            console.log('Arvio:', rating);
+                            console.log('Palautteesi:', feedback);
+                            alert('Palautteesi on vastaanotettu. Kiitos!');
+                
+                            // Redirect after displaying the alert
+                            window.location.href = "fantasia.html";
+                        }
                     </script>
                 </body>
-                
+                          
 
 	<div class="copyrights">
         <div class="container-fluid">
