@@ -110,8 +110,6 @@
                 <input type="checkbox" id="gluteeniton">Gluteeniton pohja (2€)</input> 
 
             </div> 
-
- 
             <!-- Muut täytteet jätetty alkuperäisiksi -->
             <button onclick="laskeKokonaishinta()">Tilaa</button>
             <div id="hinta"></div> <!-- Näytetään hinta tässä -->
@@ -139,8 +137,22 @@
                 kokonaishinta += 2;
             }
 
-            // Lähetetään tiedot index.html-sivulle
-            window.parent.postMessage({ action: 'lisaaOstoskoriin', pizzaNimi: 'Fantasia', hinta: kokonaishinta }, '*');
+            // Lisätään pizza ostoskoriin
+            var pizza = {
+                pizzaNimi: 'Fantasia',
+                hinta: kokonaishinta
+            };
+            lisaaOstoskoriin(pizza);
+
+            // Päivitetään hinta näytölle
+            document.getElementById("hinta").innerText = "Fantasia-pizzan kokonaishinta on: " + kokonaishinta + "€";
+        }
+
+        // Funktio lisää pizza ostoskoriin
+        function lisaaOstoskoriin(pizza) {
+            var ostoskori = JSON.parse(localStorage.getItem('ostoskori')) || [];
+            ostoskori.push(pizza);
+            localStorage.setItem('ostoskori', JSON.stringify(ostoskori));
         }
 
         function redirect() {
