@@ -212,6 +212,93 @@ e<!DOCTYPE html>
 			    <p>Our employees are really nice to all customers and they also listen if you want to make your own changes to the pizza. 
                          We also have our own website that you are currently using, you can order your own pizza from the menu item by clicking on the price of that pizza. 
 						 Happy pizza day is wished by our staff</p></h5>
+
+
+
+                         <title>Palautelomake</title>
+<style>
+    .stars {
+        display: inline-block;
+    }
+
+    .star {
+        font-size: 2rem;
+        cursor: pointer;
+        color: gray;
+    }
+
+    .star:hover,
+    .star.active {
+        color: gold;
+    }
+</style>
+</head>
+<body>
+<div class="section-title text-center"> 
+    <h6>Anna palautetta</h6>
+    <div id="rating-stars" class="stars">
+        <span class="star" data-value="1">&#9733;</span>
+        <span class="star" data-value="2">&#9733;</span>
+        <span class="star" data-value="3">&#9733;</span>
+        <span class="star" data-value="4">&#9733;</span>
+        <span class="star" data-value="5">&#9733;</span>
+    </div>
+</div>
+
+<div class="section-title text-center">
+    <textarea id="feedback" placeholder="Kirjoita palautteesi tähän..." rows="2" cols="50" required></textarea><br><br>
+    <textarea id="posti" placeholder="Sähköpostisi" type="email" cols="50" ></textarea>
+</div>
+<button onclick="submitFeedback()">Lähetä palautetta</button>
+
+<script>
+    let rating = 0;
+
+    const stars = document.querySelectorAll('.star');
+
+    stars.forEach(star => {
+        star.addEventListener('click', () => {
+            rating = parseInt(star.getAttribute('data-value'));
+            highlightStars(rating);
+        });
+    });
+
+    function highlightStars(value) {
+        stars.forEach(star => {
+            if (parseInt(star.getAttribute('data-value')) <= value) {
+                star.classList.add('active');
+            } else {
+                star.classList.remove('active');
+            }
+        });
+    }
+
+    function submitFeedback() {
+        const feedback = document.getElementById('feedback').value.trim();
+        const posti = document.getElementById('posti').value.trim();
+
+        if (posti === '') {
+            alert('Anna sähköpostisi');
+            return;
+        } else if (rating === 0) {
+            alert('Anna arvio tähdillä!');
+            return;
+        }
+        if (feedback === '') {
+            alert('Kirjoita palautteesi!');
+            return;
+        }
+
+        console.log('Arvio:', rating);
+        console.log('Palautteesi:', feedback);
+
+        alert('Palautteesi on vastaanotettu. Kiitos!');
+    }
+
+    function redirect() {
+        window.location.href = "fantasia.html";
+    }
+</script>
                       
                     </div><!-- end messagebox -->
                 </div><!-- end col -->
@@ -549,102 +636,18 @@ e<!DOCTYPE html>
                     <input type="checkbox" value="1€" > Extra pepperoni</input>
                 </div>
                 <div class="section-label text-center" id> 
+                    
 
                 </div>
 	 
 
 
 
-<head>
 
-<title>Palautelomake</title>
-<style>
-    .stars {
-        display: inline-block;
-    }
 
-    .star {
-        font-size: 2rem;
-        cursor: pointer;
-        color: gray;
-    }
 
-    .star:hover,
-    .star.active {
-        color: gold;
-    }
-</style>
-</head>
-<body>
-<div class="section-title text-center"> 
-    <h6>Anna palautetta</h6>
-    <div id="rating-stars" class="stars">
-        <span class="star" data-value="1">&#9733;</span>
-        <span class="star" data-value="2">&#9733;</span>
-        <span class="star" data-value="3">&#9733;</span>
-        <span class="star" data-value="4">&#9733;</span>
-        <span class="star" data-value="5">&#9733;</span>
-    </div>
-</div>
-
-<div class="section-title text-center">
-    <textarea id="feedback" placeholder="Kirjoita palautteesi tähän..." rows="2" cols="50" required></textarea><br><br>
-    <textarea id="posti" placeholder="Sähköpostisi" type="email" cols="50" required></textarea>
-</div>
-<button onclick="submitFeedback()">Lähetä palautetta</button>
-
-<script>
-    let rating = 0;
-
-    const stars = document.querySelectorAll('.star');
-
-    stars.forEach(star => {
-        star.addEventListener('click', () => {
-            rating = parseInt(star.getAttribute('data-value'));
-            highlightStars(rating);
-        });
-    });
-
-    function highlightStars(value) {
-        stars.forEach(star => {
-            if (parseInt(star.getAttribute('data-value')) <= value) {
-                star.classList.add('active');
-            } else {
-                star.classList.remove('active');
-            }
-        });
-    }
-
-    function submitFeedback() {
-        const feedback = document.getElementById('feedback').value.trim();
-        const posti = document.getElementById('posti').value.trim();
-
-        if (posti === '') {
-            alert('Anna sähköpostisi');
-            return;
-        } else if (rating === 0) {
-            alert('Anna arvio tähdillä!');
-            return;
-        }
-        if (feedback === '') {
-            alert('Kirjoita palautteesi!');
-            return;
-        }
-
-        console.log('Arvio:', rating);
-        console.log('Palautteesi:', feedback);
-
-        alert('Palautteesi on vastaanotettu. Kiitos!');
-    }
-
-    function redirect() {
-        window.location.href = "fantasia.html";
-    }
-</script>
-</body>
-
-</body>
 </html>	
+
     <div class="copyrights">
         <div class="container-fluid">
             <div class="footer-distributed">
@@ -659,6 +662,7 @@ e<!DOCTYPE html>
     </div><!-- end copyrights -->
 
     <a href="#" id="scroll-to-top" class="dmtop global-radius"><i class="fa fa-angle-up"></i></a>
+    
 
     <!-- ALL JS FILES -->
     <script src="js/all.js"></script>
@@ -676,4 +680,3 @@ e<!DOCTYPE html>
     <script src="js/custom.js"></script>
 </body>
 </html>
-
