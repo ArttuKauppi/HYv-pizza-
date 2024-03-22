@@ -277,7 +277,9 @@ e<!DOCTYPE html>
         const feedback = document.getElementById('feedback').value.trim();
         const posti = document.getElementById('posti').value.trim();
 
-        
+         if (posti === '') {
+            alert('Anna sähköpostisi');
+            return;
         } else if (rating === 0) {
             alert('Anna arvio tähdillä!');
             return;
